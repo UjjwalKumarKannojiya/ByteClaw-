@@ -212,70 +212,112 @@
 
     <text x="52" y="1322" class="section">// TECH STACK</text><line x1="52" y1="1338" x2="848" y2="1338" stroke="#30363D"/>
     
-      <g transform="translate(53 1354)">
+      <g transform="translate(75 1354)">
         <rect width="96" height="26" rx="13" fill="#58A6FF" fill-opacity="0.11" stroke="#58A6FF" stroke-opacity="0.42"/>
         <text x="48.0" y="17" text-anchor="middle" class="pill" fill="#58A6FF">TypeScript</text>
-        <animateTransform attributeName="transform" type="translate" values="53 1354;53 1352;53 1354" dur="5s" repeatCount="indefinite" additive="replace"/>
+        <animateTransform attributeName="transform" type="translate" values="75 1354;75 1352;75 1354" dur="5s" repeatCount="indefinite" additive="replace"/>
       </g>
 
-      <g transform="translate(157 1354)">
+      <g transform="translate(179 1354)">
         <rect width="96" height="26" rx="13" fill="#A371F7" fill-opacity="0.11" stroke="#A371F7" stroke-opacity="0.42"/>
         <text x="48.0" y="17" text-anchor="middle" class="pill" fill="#A371F7">JavaScript</text>
-        <animateTransform attributeName="transform" type="translate" values="157 1354;157 1352;157 1354" dur="5s" repeatCount="indefinite" additive="replace"/>
+        <animateTransform attributeName="transform" type="translate" values="179 1354;179 1352;179 1354" dur="5s" repeatCount="indefinite" additive="replace"/>
       </g>
 
-      <g transform="translate(261 1354)">
+      <g transform="translate(283 1354)">
         <rect width="75" height="26" rx="13" fill="#3FB950" fill-opacity="0.11" stroke="#3FB950" stroke-opacity="0.42"/>
         <text x="37.5" y="17" text-anchor="middle" class="pill" fill="#3FB950">Node.js</text>
-        <animateTransform attributeName="transform" type="translate" values="261 1354;261 1352;261 1354" dur="5s" repeatCount="indefinite" additive="replace"/>
+        <animateTransform attributeName="transform" type="translate" values="283 1354;283 1352;283 1354" dur="5s" repeatCount="indefinite" additive="replace"/>
       </g>
 
-      <g transform="translate(344 1354)">
+      <g transform="translate(366 1354)">
         <rect width="66" height="26" rx="13" fill="#D29922" fill-opacity="0.11" stroke="#D29922" stroke-opacity="0.42"/>
         <text x="33.0" y="17" text-anchor="middle" class="pill" fill="#D29922">Bun</text>
-        <animateTransform attributeName="transform" type="translate" values="344 1354;344 1352;344 1354" dur="5s" repeatCount="indefinite" additive="replace"/>
+        <animateTransform attributeName="transform" type="translate" values="366 1354;366 1352;366 1354" dur="5s" repeatCount="indefinite" additive="replace"/>
       </g>
 
-      <g transform="translate(418 1354)">
+      <g transform="translate(440 1354)">
         <rect width="110" height="26" rx="13" fill="#F85149" fill-opacity="0.11" stroke="#F85149" stroke-opacity="0.42"/>
         <text x="55.0" y="17" text-anchor="middle" class="pill" fill="#F85149">Telegram Bot</text>
-        <animateTransform attributeName="transform" type="translate" values="418 1354;418 1352;418 1354" dur="5s" repeatCount="indefinite" additive="replace"/>
+        <animateTransform attributeName="transform" type="translate" values="440 1354;440 1352;440 1354" dur="5s" repeatCount="indefinite" additive="replace"/>
       </g>
 
-      <g transform="translate(536 1354)">
-        <rect width="89" height="26" rx="13" fill="#39C5CF" fill-opacity="0.11" stroke="#39C5CF" stroke-opacity="0.42"/>
-        <text x="44.5" y="17" text-anchor="middle" class="pill" fill="#39C5CF">Firecrawl</text>
-        <animateTransform attributeName="transform" type="translate" values="536 1354;536 1352;536 1354" dur="5s" repeatCount="indefinite" additive="replace"/>
+      <g transform="translate(558 1354)">
+        <rect width="117" height="26" rx="13" fill="#39C5CF" fill-opacity="0.11" stroke="#39C5CF" stroke-opacity="0.42"/>
+        <text x="58.5" y="17" text-anchor="middle" class="pill" fill="#39C5CF">Clack Prompts</text>
+        <animateTransform attributeName="transform" type="translate" values="558 1354;558 1352;558 1354" dur="5s" repeatCount="indefinite" additive="replace"/>
       </g>
 
-      <g transform="translate(633 1354)">
-        <rect width="82" height="26" rx="13" fill="#58A6FF" fill-opacity="0.11" stroke="#58A6FF" stroke-opacity="0.42"/>
-        <text x="41.0" y="17" text-anchor="middle" class="pill" fill="#58A6FF">Markdown</text>
-        <animateTransform attributeName="transform" type="translate" values="633 1354;633 1352;633 1354" dur="5s" repeatCount="indefinite" additive="replace"/>
+      <g transform="translate(683 1354)">
+        <rect width="66" height="26" rx="13" fill="#58A6FF" fill-opacity="0.11" stroke="#58A6FF" stroke-opacity="0.42"/>
+        <text x="33.0" y="17" text-anchor="middle" class="pill" fill="#58A6FF">Chalk</text>
+        <animateTransform attributeName="transform" type="translate" values="683 1354;683 1352;683 1354" dur="5s" repeatCount="indefinite" additive="replace"/>
       </g>
 
-      <g transform="translate(723 1354)">
-        <rect width="124" height="26" rx="13" fill="#A371F7" fill-opacity="0.11" stroke="#A371F7" stroke-opacity="0.42"/>
-        <text x="62.0" y="17" text-anchor="middle" class="pill" fill="#A371F7">GitHub Actions</text>
-        <animateTransform attributeName="transform" type="translate" values="723 1354;723 1352;723 1354" dur="5s" repeatCount="indefinite" additive="replace"/>
+      <g transform="translate(757 1354)">
+        <rect width="68" height="26" rx="13" fill="#A371F7" fill-opacity="0.11" stroke="#A371F7" stroke-opacity="0.42"/>
+        <text x="34.0" y="17" text-anchor="middle" class="pill" fill="#A371F7">Figlet</text>
+        <animateTransform attributeName="transform" type="translate" values="757 1354;757 1352;757 1354" dur="5s" repeatCount="indefinite" additive="replace"/>
       </g>
 
-      <g transform="translate(317 1388)">
+      <g transform="translate(82 1388)">
+        <rect width="89" height="26" rx="13" fill="#3FB950" fill-opacity="0.11" stroke="#3FB950" stroke-opacity="0.42"/>
+        <text x="44.5" y="17" text-anchor="middle" class="pill" fill="#3FB950">Firecrawl</text>
+        <animateTransform attributeName="transform" type="translate" values="82 1388;82 1386;82 1388" dur="5s" repeatCount="indefinite" additive="replace"/>
+      </g>
+
+      <g transform="translate(179 1388)">
+        <rect width="82" height="26" rx="13" fill="#D29922" fill-opacity="0.11" stroke="#D29922" stroke-opacity="0.42"/>
+        <text x="41.0" y="17" text-anchor="middle" class="pill" fill="#D29922">Markdown</text>
+        <animateTransform attributeName="transform" type="translate" values="179 1388;179 1386;179 1388" dur="5s" repeatCount="indefinite" additive="replace"/>
+      </g>
+
+      <g transform="translate(269 1388)">
+        <rect width="124" height="26" rx="13" fill="#F85149" fill-opacity="0.11" stroke="#F85149" stroke-opacity="0.42"/>
+        <text x="62.0" y="17" text-anchor="middle" class="pill" fill="#F85149">GitHub Actions</text>
+        <animateTransform attributeName="transform" type="translate" values="269 1388;269 1386;269 1388" dur="5s" repeatCount="indefinite" additive="replace"/>
+      </g>
+
+      <g transform="translate(401 1388)">
+        <rect width="68" height="26" rx="13" fill="#39C5CF" fill-opacity="0.11" stroke="#39C5CF" stroke-opacity="0.42"/>
+        <text x="34.0" y="17" text-anchor="middle" class="pill" fill="#39C5CF">Ai Sdk</text>
+        <animateTransform attributeName="transform" type="translate" values="401 1388;401 1386;401 1388" dur="5s" repeatCount="indefinite" additive="replace"/>
+      </g>
+
+      <g transform="translate(477 1388)">
+        <rect width="66" height="26" rx="13" fill="#58A6FF" fill-opacity="0.11" stroke="#58A6FF" stroke-opacity="0.42"/>
+        <text x="33.0" y="17" text-anchor="middle" class="pill" fill="#58A6FF">Cli</text>
+        <animateTransform attributeName="transform" type="translate" values="477 1388;477 1386;477 1388" dur="5s" repeatCount="indefinite" additive="replace"/>
+      </g>
+
+      <g transform="translate(551 1388)">
+        <rect width="89" height="26" rx="13" fill="#A371F7" fill-opacity="0.11" stroke="#A371F7" stroke-opacity="0.42"/>
+        <text x="44.5" y="17" text-anchor="middle" class="pill" fill="#A371F7">Commander</text>
+        <animateTransform attributeName="transform" type="translate" values="551 1388;551 1386;551 1388" dur="5s" repeatCount="indefinite" additive="replace"/>
+      </g>
+
+      <g transform="translate(648 1388)">
         <rect width="66" height="26" rx="13" fill="#3FB950" fill-opacity="0.11" stroke="#3FB950" stroke-opacity="0.42"/>
-        <text x="33.0" y="17" text-anchor="middle" class="pill" fill="#3FB950">Cli</text>
-        <animateTransform attributeName="transform" type="translate" values="317 1388;317 1386;317 1388" dur="5s" repeatCount="indefinite" additive="replace"/>
+        <text x="33.0" y="17" text-anchor="middle" class="pill" fill="#3FB950">Diff</text>
+        <animateTransform attributeName="transform" type="translate" values="648 1388;648 1386;648 1388" dur="5s" repeatCount="indefinite" additive="replace"/>
       </g>
 
-      <g transform="translate(391 1388)">
-        <rect width="66" height="26" rx="13" fill="#D29922" fill-opacity="0.11" stroke="#D29922" stroke-opacity="0.42"/>
-        <text x="33.0" y="17" text-anchor="middle" class="pill" fill="#D29922">Json</text>
-        <animateTransform attributeName="transform" type="translate" values="391 1388;391 1386;391 1388" dur="5s" repeatCount="indefinite" additive="replace"/>
+      <g transform="translate(722 1388)">
+        <rect width="96" height="26" rx="13" fill="#D29922" fill-opacity="0.11" stroke="#D29922" stroke-opacity="0.42"/>
+        <text x="48.0" y="17" text-anchor="middle" class="pill" fill="#D29922">Es Modules</text>
+        <animateTransform attributeName="transform" type="translate" values="722 1388;722 1386;722 1388" dur="5s" repeatCount="indefinite" additive="replace"/>
       </g>
 
-      <g transform="translate(465 1388)">
-        <rect width="117" height="26" rx="13" fill="#F85149" fill-opacity="0.11" stroke="#F85149" stroke-opacity="0.42"/>
-        <text x="58.5" y="17" text-anchor="middle" class="pill" fill="#F85149">Openrouter Ai</text>
-        <animateTransform attributeName="transform" type="translate" values="465 1388;465 1386;465 1388" dur="5s" repeatCount="indefinite" additive="replace"/>
+      <g transform="translate(379 1422)">
+        <rect width="66" height="26" rx="13" fill="#F85149" fill-opacity="0.11" stroke="#F85149" stroke-opacity="0.42"/>
+        <text x="33.0" y="17" text-anchor="middle" class="pill" fill="#F85149">Json</text>
+        <animateTransform attributeName="transform" type="translate" values="379 1422;379 1420;379 1422" dur="5s" repeatCount="indefinite" additive="replace"/>
+      </g>
+
+      <g transform="translate(453 1422)">
+        <rect width="68" height="26" rx="13" fill="#39C5CF" fill-opacity="0.11" stroke="#39C5CF" stroke-opacity="0.42"/>
+        <text x="34.0" y="17" text-anchor="middle" class="pill" fill="#39C5CF">Marked</text>
+        <animateTransform attributeName="transform" type="translate" values="453 1422;453 1420;453 1422" dur="5s" repeatCount="indefinite" additive="replace"/>
       </g>
 
     <text x="52" y="1446" class="section">// GETTING STARTED</text><line x1="52" y1="1462" x2="848" y2="1462" stroke="#30363D"/>
