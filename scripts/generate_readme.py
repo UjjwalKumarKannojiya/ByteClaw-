@@ -3,7 +3,6 @@ from __future__ import annotations
 
 import html
 import json
-import os
 import re
 from pathlib import Path
 from typing import Any, Dict, Iterable, List, Tuple
@@ -21,14 +20,14 @@ DEFAULT_CONFIG: Dict[str, Any] = {
         "headline": "for understanding, planning, and modifying codebases.",
         "description": "Run CLI workflows, ask questions about your project, generate implementation plans, and control coding tasks through Telegram.",
         "status": "built for dev productivity",
-        "repo_url": "https://github.com/UjjwalKumarKannojiya/ByteClaw",
+        "repo_url": "https://github.com/UjjwalKumarKannojiya/ByteClaw-",
         "author": "Ujjwal Kumar Kannojiya",
     },
-    "badges": ["TypeScript", "Node.js", "CLI", "Telegram Bot", "OpenRouter AI", "Web Tools"],
+    "badges": ["TypeScript", "Node.js", "Bun", "CLI", "Telegram Bot", "OpenRouter AI"],
     "features": [],
     "commands": [],
-    "env": ["OPENROUTER_API_KEY", "TELEGRAM_BOT_TOKEN", "FIRECRAWL_API_KEY", "TAVILY_API_KEY"],
-    "fallback_tech": ["TypeScript", "JavaScript", "Node.js", "Bun", "Telegram Bot", "OpenRouter AI", "CLI", "Markdown", "GitHub Actions"],
+    "env": ["OPENROUTER_API_KEY", "TELEGRAM_BOT_TOKEN", "TELEGRAM_CHAT_ID", "FIRECRAWL_API_KEY", "TAVILY_API_KEY"],
+    "fallback_tech": ["TypeScript", "JavaScript", "Node.js", "Bun", "CLI", "Telegram Bot", "OpenRouter AI", "Markdown", "GitHub Actions"],
 }
 
 TECH_NORMALIZE = {
@@ -114,6 +113,30 @@ def short(value: Any, limit: int) -> str:
     return text[: max(0, limit - 1)].rstrip() + "…"
 
 
+def wrap_text(value: Any, limit: int, max_lines: int = 2) -> List[str]:
+    text = re.sub(r"\s+", " ", str(value or "")).strip()
+    if not text:
+        return []
+    words = text.split()
+    lines: List[str] = []
+    current = ""
+    for word in words:
+        next_line = word if not current else f"{current} {word}"
+        if len(next_line) <= limit:
+            current = next_line
+        else:
+            if current:
+                lines.append(current)
+            current = word
+            if len(lines) == max_lines - 1:
+                break
+    if current and len(lines) < max_lines:
+        lines.append(current)
+    if len(lines) == max_lines and len(" ".join(words)) > len(" ".join(lines)):
+        lines[-1] = short(lines[-1], max(8, limit - 1))
+    return lines[:max_lines]
+
+
 def slug_to_title(value: str) -> str:
     text = re.sub(r"[@_/.-]+", " ", value).strip()
     return " ".join(part.capitalize() for part in text.split())
@@ -126,7 +149,6 @@ def normalize_tech(name: str) -> str:
     key = raw.lower().strip()
     if key in TECH_NORMALIZE:
         return TECH_NORMALIZE[key]
-    # Keep clean framework/library names instead of huge scoped package names.
     if key.startswith("@types/"):
         return "TypeScript"
     if key.startswith("@clack/"):
@@ -159,8 +181,7 @@ def read_package_tech() -> List[str]:
     if pkg.get("type") == "module":
         found.append("ES Modules")
 
-    bin_value = pkg.get("bin")
-    if bin_value:
+    if pkg.get("bin"):
         found.append("CLI")
 
     scripts = " ".join(str(v).lower() for v in (pkg.get("scripts") or {}).values())
@@ -214,110 +235,114 @@ def detected_tech(config: Dict[str, Any]) -> List[str]:
     result = unique_ordered(dynamic + configured)
     preferred = [
         "TypeScript", "JavaScript", "Node.js", "Bun", "CLI", "Telegram Bot", "OpenRouter AI",
-        "OpenAI SDK", "Clack Prompts", "Chalk", "Figlet", "Zod", "Axios", "Markdown", "GitHub Actions",
+        "OpenAI SDK", "Clack Prompts", "Chalk", "Figlet", "Zod", "Axios", "Firecrawl", "Markdown", "GitHub Actions",
     ]
     rank = {name: index for index, name in enumerate(preferred)}
     return sorted(result, key=lambda x: (rank.get(x, 999), x.lower()))[:18]
 
 
-def pill(label: str, x: int, y: int, color: str) -> Tuple[str, int]:
-    width = max(70, len(label) * 8 + 28)
+def pill(label: str, x: int, y: int, color: str, height: int = 26) -> Tuple[str, int]:
+    width = max(66, len(label) * 7 + 26)
     return f'''
       <g transform="translate({x} {y})">
-        <rect width="{width}" height="28" rx="14" fill="{color}" fill-opacity="0.11" stroke="{color}" stroke-opacity="0.42"/>
-        <text x="{width/2:.1f}" y="18" text-anchor="middle" class="pill" fill="{color}">{esc(label)}</text>
+        <rect width="{width}" height="{height}" rx="{height // 2}" fill="{color}" fill-opacity="0.11" stroke="{color}" stroke-opacity="0.42"/>
+        <text x="{width/2:.1f}" y="17" text-anchor="middle" class="pill" fill="{color}">{esc(label)}</text>
         <animateTransform attributeName="transform" type="translate" values="{x} {y};{x} {y-2};{x} {y}" dur="5s" repeatCount="indefinite" additive="replace"/>
       </g>''', width
 
 
-def flow_badge(text: str, x: int, y: int, color: str) -> Tuple[str, int]:
-    width = max(92, len(text) * 8 + 30)
-    return f'''
-      <g transform="translate({x} {y})">
-        <rect width="{width}" height="30" rx="7" fill="#0D1117" stroke="{color}" stroke-opacity="0.5"/>
-        <text x="{width/2:.1f}" y="20" text-anchor="middle" class="monoSmall" fill="{color}">{esc(text)}</text>
-      </g>''', width
+def centered_pills(labels: List[str], start_y: int, max_width: int = 780, start_x: int = 60, gap: int = 8, row_gap: int = 34) -> str:
+    colors = ["#58A6FF", "#A371F7", "#3FB950", "#D29922", "#F85149", "#39C5CF"]
+    rows: List[List[Tuple[str, int, str]]] = []
+    row: List[Tuple[str, int, str]] = []
+    row_w = 0
+    for i, label in enumerate(labels):
+        width = max(66, len(label) * 7 + 26)
+        extra = width if not row else width + gap
+        if row and row_w + extra > max_width:
+            rows.append(row)
+            row = []
+            row_w = 0
+            extra = width
+        row.append((label, width, colors[i % len(colors)]))
+        row_w += extra
+    if row:
+        rows.append(row)
 
-
-def tech_pills_svg(techs: List[str]) -> str:
-    palette = ["#58A6FF", "#A371F7", "#3FB950", "#D29922", "#F85149", "#39C5CF"]
-    x, y = 56, 1238
     parts = []
-    for i, label in enumerate(techs):
-        item, width = pill(label, x, y, palette[i % len(palette)])
-        if x + width > 944:
-            x = 56
-            y += 40
-            item, width = pill(label, x, y, palette[i % len(palette)])
-        parts.append(item)
-        x += width + 10
+    for r, items in enumerate(rows):
+        total = sum(w for _, w, _ in items) + gap * (len(items) - 1)
+        x = start_x + (max_width - total) // 2
+        y = start_y + r * row_gap
+        for label, width, color in items:
+            item, _ = pill(label, x, y, color)
+            parts.append(item)
+            x += width + gap
     return "\n".join(parts)
 
 
 def badges_svg(labels: List[str]) -> str:
-    colors = ["#58A6FF", "#A371F7", "#3FB950", "#F85149", "#D29922", "#39C5CF"]
-    x, y = 245, 178
-    parts = []
-    for i, label in enumerate(labels[:7]):
-        item, width = pill(label, x, y, colors[i % len(colors)])
-        parts.append(item)
-        x += width + 10
-    return "\n".join(parts)
+    return centered_pills(labels[:6], start_y=182, max_width=720, start_x=90, gap=8, row_gap=32)
+
+
+def section_title(title: str, y: int) -> str:
+    return f'<text x="52" y="{y}" class="section">// {esc(title)}</text><line x1="52" y1="{y+16}" x2="848" y2="{y+16}" stroke="#30363D"/>'
 
 
 def feature_cards_svg(features: List[Dict[str, Any]]) -> str:
     if not features:
         features = DEFAULT_CONFIG.get("features", [])
     cards = []
-    card_w, card_h = 286, 156
-    start_x, start_y = 56, 472
-    gap_x, gap_y = 22, 22
+    card_w, card_h = 386, 128
+    start_x, start_y = 52, 482
+    gap_x, gap_y = 24, 20
     colors = ["#58A6FF", "#A371F7", "#3FB950", "#F85149", "#D29922", "#39C5CF"]
     for i, feature in enumerate(features[:6]):
-        col = i % 3
-        row = i // 3
+        col = i % 2
+        row = i // 2
         x = start_x + col * (card_w + gap_x)
         y = start_y + row * (card_h + gap_y)
         color = colors[i % len(colors)]
         items = feature.get("items", [])[:4]
         lis = []
         for j, item in enumerate(items):
-            yy = 72 + j * 20
-            lis.append(f'<circle cx="22" cy="{yy-4}" r="2.8" fill="{color}"/><text x="34" y="{yy}" class="cardItem">{esc(short(item, 32))}</text>')
+            yy = 60 + j * 18
+            lis.append(f'<circle cx="22" cy="{yy-4}" r="2.8" fill="{color}"/><text x="34" y="{yy}" class="cardItem">{esc(short(item, 43))}</text>')
         cards.append(f'''
     <g transform="translate({x} {y})">
       <rect width="{card_w}" height="{card_h}" rx="12" fill="#161B22" stroke="#30363D"/>
       <rect x="0" y="0" width="{card_w}" height="3" rx="12" fill="{color}">
-        <animate attributeName="opacity" values="0.45;1;0.45" dur="4.5s" begin="{i*0.25:.2f}s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.45;1;0.45" dur="4.5s" begin="{i*0.2:.2f}s" repeatCount="indefinite"/>
       </rect>
-      <text x="20" y="34" class="featureIcon" fill="{color}">{esc(feature.get('icon', '✦'))}</text>
-      <text x="48" y="34" class="cardTitle">{esc(feature.get('title', 'Feature'))}</text>
+      <circle cx="28" cy="26" r="7" fill="{color}" fill-opacity="0.18" stroke="{color}"/>
+      <circle cx="28" cy="26" r="3" fill="{color}"/>
+      <text x="48" y="32" class="cardTitle">{esc(feature.get('title', 'Feature'))}</text>
       {''.join(lis)}
-      <animateTransform attributeName="transform" type="translate" values="{x} {y};{x} {y-3};{x} {y}" dur="6s" begin="{i*0.18:.2f}s" repeatCount="indefinite" additive="replace"/>
+      <animateTransform attributeName="transform" type="translate" values="{x} {y};{x} {y-2};{x} {y}" dur="6s" begin="{i*0.18:.2f}s" repeatCount="indefinite" additive="replace"/>
     </g>''')
     return "\n".join(cards)
 
 
 def command_cards_svg(commands: List[Dict[str, str]]) -> str:
     parts = []
-    x, y = 56, 1442
-    card_w, card_h = 434, 92
+    x, y = 52, 1476
+    card_w, card_h = 386, 84
     colors = ["#58A6FF", "#A371F7", "#3FB950", "#D29922"]
     for i, c in enumerate(commands[:4]):
         col = i % 2
         row = i // 2
-        xx = x + col * 454
-        yy = y + row * 112
+        xx = x + col * 410
+        yy = y + row * 102
         cmd_lines = str(c.get("cmd", "")).splitlines()[:3]
         cmd_text = "".join(
-            f'<text x="24" y="{52 + n*18}" class="cmdText">{esc(line)}</text>' for n, line in enumerate(cmd_lines)
+            f'<text x="24" y="{50 + n*17}" class="cmdText">{esc(short(line, 42))}</text>' for n, line in enumerate(cmd_lines)
         )
         color = colors[i % len(colors)]
         parts.append(f'''
     <g transform="translate({xx} {yy})">
       <rect width="{card_w}" height="{card_h}" rx="11" fill="#161B22" stroke="#30363D"/>
-      <circle cx="22" cy="24" r="6" fill="{color}"/>
-      <text x="40" y="29" class="cardTitle">{esc(c.get('title', 'Step'))}</text>
+      <circle cx="22" cy="23" r="6" fill="{color}"/>
+      <text x="40" y="28" class="cardTitle">{esc(c.get('title', 'Step'))}</text>
       {cmd_text}
     </g>''')
     return "\n".join(parts)
@@ -325,51 +350,54 @@ def command_cards_svg(commands: List[Dict[str, str]]) -> str:
 
 def env_cards_svg(envs: List[str]) -> str:
     parts = []
-    x, y = 56, 1712
+    x, y = 52, 1748
     for i, name in enumerate(envs[:6]):
         col = i % 3
         row = i // 3
-        xx = x + col * 308
-        yy = y + row * 72
+        xx = x + col * 274
+        yy = y + row * 62
         parts.append(f'''
     <g transform="translate({xx} {yy})">
-      <rect width="286" height="54" rx="9" fill="#161B22" stroke="#30363D"/>
-      <text x="18" y="23" class="envKey">{esc(name)}</text>
-      <text x="18" y="40" class="envHint">paste your key here</text>
+      <rect width="246" height="48" rx="9" fill="#161B22" stroke="#30363D"/>
+      <text x="16" y="21" class="envKey">{esc(name)}</text>
+      <text x="16" y="37" class="envHint">paste your key here</text>
     </g>''')
     return "\n".join(parts)
 
 
 def project_structure_svg() -> str:
     lines = [
-        "ByteClaw/",
-        "├─ src/",
-        "│  ├─ modes/",
-        "│  │  ├─ cli.ts",
-        "│  │  └─ telegram.ts",
-        "│  ├─ agents/",
-        "│  ├─ tools/",
-        "│  └─ index.ts",
-        "├─ scripts/",
-        "├─ package.json",
-        "└─ README.md",
+        "ByteClaw-/",
+        "|- ai/",
+        "|- modes/",
+        "|  |- agent/",
+        "|  |- ask/",
+        "|  |- plan/",
+        "|  `- telegram/",
+        "|- tui/",
+        "|- scripts/",
+        "`- index.ts",
     ]
     return "".join(
-        f'<text x="82" y="{878 + i*20}" class="treeText">{esc(line)}</text>' for i, line in enumerate(lines)
+        f'<text x="76" y="{1006 + i*18}" class="treeText">{esc(line)}</text>' for i, line in enumerate(lines)
     )
 
 
 def workflow_svg() -> str:
-    steps = ["Understand Repo", "Ask / Plan", "Run Actions", "CLI / Telegram", "Review"]
+    steps = ["Understand", "Ask / Plan", "Run Actions", "Review", "Telegram"]
     colors = ["#58A6FF", "#A371F7", "#3FB950", "#D29922", "#F85149"]
-    x, y = 56, 1132
+    x, y = 76, 1250
     parts = []
     for i, step in enumerate(steps):
-        item, width = flow_badge(step, x, y, colors[i])
-        parts.append(item)
+        width = max(88, len(step) * 8 + 28)
+        parts.append(f'''
+      <g transform="translate({x} {y})">
+        <rect width="{width}" height="30" rx="7" fill="#0D1117" stroke="{colors[i]}" stroke-opacity="0.5"/>
+        <text x="{width/2:.1f}" y="20" text-anchor="middle" class="monoSmall" fill="{colors[i]}">{esc(step)}</text>
+      </g>''')
         if i < len(steps) - 1:
-            parts.append(f'<path d="M{x+width+10} {y+15} H{x+width+40}" stroke="#30363D" stroke-width="2" stroke-dasharray="5 5"><animate attributeName="stroke-dashoffset" values="0;-40" dur="2s" repeatCount="indefinite"/></path>')
-        x += width + 46
+            parts.append(f'<path d="M{x+width+10} {y+15} H{x+width+34}" stroke="#30363D" stroke-width="2" stroke-dasharray="5 5"><animate attributeName="stroke-dashoffset" values="0;-40" dur="2s" repeatCount="indefinite"/></path>')
+        x += width + 42
     return "\n".join(parts)
 
 
@@ -385,98 +413,98 @@ def svg_document(config: Dict[str, Any]) -> str:
     envs = config.get("env") or DEFAULT_CONFIG.get("env", [])
     features = config.get("features") or []
     badges = config.get("badges") or techs[:6]
+    desc_lines = wrap_text(description, 78, 2)
+    desc_svg = "".join(f'<text x="450" y="{242 + i*20}" text-anchor="middle" class="desc">{esc(line)}</text>' for i, line in enumerate(desc_lines))
 
-    return f'''<svg width="1000" height="1860" viewBox="0 0 1000 1860" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="{esc(project_name)} animated README interface">
+    return f'''<svg width="900" height="1940" viewBox="0 0 900 1940" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="{esc(project_name)} animated README interface">
   <defs>
-    <linearGradient id="titleGrad" x1="250" y1="40" x2="760" y2="120" gradientUnits="userSpaceOnUse">
+    <linearGradient id="titleGrad" x1="230" y1="40" x2="670" y2="120" gradientUnits="userSpaceOnUse">
       <stop stop-color="#58A6FF"/>
       <stop offset="0.55" stop-color="#A371F7"/>
       <stop offset="1" stop-color="#39D353"/>
     </linearGradient>
     <radialGradient id="glowBlue" cx="50%" cy="50%" r="50%"><stop stop-color="#58A6FF" stop-opacity="0.18"/><stop offset="1" stop-color="#58A6FF" stop-opacity="0"/></radialGradient>
     <radialGradient id="glowPurple" cx="50%" cy="50%" r="50%"><stop stop-color="#A371F7" stop-opacity="0.16"/><stop offset="1" stop-color="#A371F7" stop-opacity="0"/></radialGradient>
-    <filter id="softShadow"><feDropShadow dx="0" dy="12" stdDeviation="18" flood-color="#000000" flood-opacity="0.45"/></filter>
-    <clipPath id="clip"><rect width="1000" height="1860" rx="18"/></clipPath>
+    <clipPath id="clip"><rect width="900" height="1940" rx="18"/></clipPath>
     <style>
-      .title {{ font: 900 72px Inter, Segoe UI, Arial, sans-serif; letter-spacing: 8px; fill: #E6EDF3; }}
-      .subtitle {{ font: 600 18px Inter, Segoe UI, Arial, sans-serif; fill: #E6EDF3; }}
-      .desc {{ font: 500 15px Inter, Segoe UI, Arial, sans-serif; fill: #8B949E; }}
-      .section {{ font: 800 15px ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; fill: #58A6FF; letter-spacing: 2.4px; }}
-      .muted {{ font: 500 13px ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; fill: #8B949E; }}
-      .pill {{ font: 800 12px ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; letter-spacing: .3px; }}
-      .cardTitle {{ font: 800 16px Inter, Segoe UI, Arial, sans-serif; fill: #E6EDF3; }}
-      .cardItem {{ font: 500 13px Inter, Segoe UI, Arial, sans-serif; fill: #8B949E; }}
-      .featureIcon {{ font: 900 18px Inter, Segoe UI, Arial, sans-serif; }}
-      .treeText {{ font: 600 14px ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; fill: #C9D1D9; }}
-      .monoSmall {{ font: 800 12px ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; }}
-      .cmdText {{ font: 700 13px ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; fill: #C9D1D9; }}
-      .envKey {{ font: 800 13px ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; fill: #3FB950; }}
-      .envHint {{ font: 500 11px ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; fill: #8B949E; }}
+      .title {{ font: 900 58px Inter, Segoe UI, Arial, sans-serif; letter-spacing: 5px; fill: url(#titleGrad); }}
+      .subtitle {{ font: 700 17px Inter, Segoe UI, Arial, sans-serif; fill: #E6EDF3; }}
+      .desc {{ font: 500 14px Inter, Segoe UI, Arial, sans-serif; fill: #8B949E; }}
+      .section {{ font: 800 14px ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; fill: #58A6FF; letter-spacing: 2px; }}
+      .muted {{ font: 500 12px ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; fill: #8B949E; }}
+      .pill {{ font: 800 11px ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; letter-spacing: .25px; }}
+      .cardTitle {{ font: 800 15px Inter, Segoe UI, Arial, sans-serif; fill: #E6EDF3; }}
+      .cardItem {{ font: 500 12px Inter, Segoe UI, Arial, sans-serif; fill: #8B949E; }}
+      .featureIcon {{ font: 900 17px Inter, Segoe UI, Arial, sans-serif; }}
+      .treeText {{ font: 600 13px ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; fill: #C9D1D9; }}
+      .monoSmall {{ font: 800 11px ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; }}
+      .cmdText {{ font: 700 12px ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; fill: #C9D1D9; }}
+      .envKey {{ font: 800 12px ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; fill: #3FB950; }}
+      .envHint {{ font: 500 10.5px ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; fill: #8B949E; }}
     </style>
   </defs>
   <g clip-path="url(#clip)">
-    <rect width="1000" height="1860" rx="18" fill="#0D1117"/>
-    <rect x="1" y="1" width="998" height="1858" rx="17" stroke="#30363D"/>
+    <rect width="900" height="1940" rx="18" fill="#0D1117"/>
+    <rect x="1" y="1" width="898" height="1938" rx="17" stroke="#30363D"/>
 
-    <circle cx="120" cy="100" r="180" fill="url(#glowBlue)">
-      <animate attributeName="cx" values="120;170;120" dur="9s" repeatCount="indefinite"/>
-      <animate attributeName="cy" values="100;135;100" dur="9s" repeatCount="indefinite"/>
+    <circle cx="96" cy="92" r="150" fill="url(#glowBlue)">
+      <animate attributeName="cx" values="96;140;96" dur="9s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="92;126;92" dur="9s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="890" cy="170" r="220" fill="url(#glowPurple)">
-      <animate attributeName="cx" values="890;820;890" dur="11s" repeatCount="indefinite"/>
-      <animate attributeName="cy" values="170;115;170" dur="11s" repeatCount="indefinite"/>
+    <circle cx="806" cy="140" r="185" fill="url(#glowPurple)">
+      <animate attributeName="cx" values="806;748;806" dur="11s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="140;98;140" dur="11s" repeatCount="indefinite"/>
     </circle>
-    <path d="M210 105 C360 28 625 30 800 110" stroke="#58A6FF" stroke-width="1.5" stroke-dasharray="10 18" opacity="0.35">
+    <path d="M190 100 C320 32 560 34 718 104" stroke="#58A6FF" stroke-width="1.4" stroke-dasharray="10 18" opacity="0.35">
       <animate attributeName="stroke-dashoffset" values="0;-320" dur="8s" repeatCount="indefinite"/>
       <animate attributeName="opacity" values="0.18;0.48;0.18" dur="8s" repeatCount="indefinite"/>
     </path>
 
     <g>
-      <rect x="56" y="42" width="888" height="274" rx="18" fill="#0F1623" stroke="#30363D"/>
-      <g transform="translate(0 0)">
-        <text x="500" y="118" text-anchor="middle" class="title"><tspan fill="#58A6FF">BYTE</tspan><tspan fill="#E6EDF3">CLAW</tspan></text>
-        <animateTransform attributeName="transform" type="translate" values="0 0;0 -5;0 0" dur="6s" repeatCount="indefinite"/>
+      <rect x="32" y="32" width="836" height="286" rx="18" fill="#0F1623" stroke="#30363D"/>
+      <g>
+        <text x="450" y="112" text-anchor="middle" class="title">BYTECLAW</text>
+        <animateTransform attributeName="transform" type="translate" values="0 0;0 -4;0 0" dur="6s" repeatCount="indefinite"/>
       </g>
-      <text x="500" y="154" text-anchor="middle" class="subtitle">{esc(tagline)} <tspan fill="#58A6FF">{esc(headline)}</tspan></text>
-      <text x="500" y="220" text-anchor="middle" class="desc">{esc(short(description, 105))}</text>
+      <text x="450" y="148" text-anchor="middle" class="subtitle">{esc(tagline)}</text>
+      <text x="450" y="172" text-anchor="middle" class="subtitle" fill="#58A6FF">{esc(headline)}</text>
       {badges_svg(badges)}
-      <rect x="410" y="258" width="180" height="34" rx="17" fill="#161B22" stroke="#3FB950" stroke-opacity="0.5"/>
-      <circle cx="430" cy="275" r="5" fill="#3FB950"><animate attributeName="opacity" values="0.35;1;0.35" dur="1.4s" repeatCount="indefinite"/></circle>
-      <text x="450" y="280" class="muted">{esc(status)}</text>
+      {desc_svg}
+      <rect x="338" y="278" width="224" height="28" rx="14" fill="#161B22" stroke="#3FB950" stroke-opacity="0.5"/>
+      <circle cx="358" cy="292" r="4.5" fill="#3FB950"><animate attributeName="opacity" values="0.35;1;0.35" dur="1.4s" repeatCount="indefinite"/></circle>
+      <text x="376" y="296" class="muted">{esc(status)}</text>
     </g>
 
-    <text x="56" y="360" class="section">✦ WHAT IS {esc(project_name.upper())}?</text>
-    <rect x="56" y="378" width="888" height="2" fill="#30363D"/>
-    <text x="64" y="410" class="desc"><tspan fill="#58A6FF" font-weight="800">{esc(project_name)}</tspan> is a developer assistant that combines terminal workflows, AI planning, local project understanding, and Telegram control.</text>
+    {section_title('WHAT IS ' + project_name.upper() + '?', 360)}
+    <text x="60" y="404" class="desc"><tspan fill="#58A6FF" font-weight="800">{esc(project_name)}</tspan> combines terminal workflows, AI planning, project understanding, and Telegram control.</text>
 
-    <text x="56" y="446" class="section">✦ FEATURES</text>
-
+    {section_title('FEATURES', 448)}
     {feature_cards_svg(features)}
 
-    <text x="56" y="830" class="section">✦ PROJECT STRUCTURE</text>
-    <rect x="56" y="850" width="432" height="164" rx="12" fill="#161B22" stroke="#30363D"/>
+    {section_title('PROJECT STRUCTURE', 950)}
+    <rect x="52" y="978" width="386" height="194" rx="12" fill="#161B22" stroke="#30363D"/>
     {project_structure_svg()}
-    <rect x="512" y="850" width="432" height="164" rx="12" fill="#161B22" stroke="#30363D"/>
-    <text x="540" y="886" class="cardTitle">Terminal-first experience</text>
-    <text x="540" y="916" class="cardItem">Designed for fast local workflows with clean prompts,</text>
-    <text x="540" y="938" class="cardItem">AI-powered planning, and remote Telegram control.</text>
-    <rect x="540" y="964" width="350" height="26" rx="6" fill="#0D1117" stroke="#30363D"/>
-    <text x="558" y="982" class="cmdText">$ byteclaw-build wakeup</text>
+    <rect x="462" y="978" width="386" height="194" rx="12" fill="#161B22" stroke="#30363D"/>
+    <text x="490" y="1016" class="cardTitle">Terminal-first experience</text>
+    <text x="490" y="1046" class="cardItem">Designed for fast local workflows with clean prompts,</text>
+    <text x="490" y="1066" class="cardItem">AI-powered planning, and remote Telegram control.</text>
+    <rect x="490" y="1102" width="314" height="28" rx="6" fill="#0D1117" stroke="#30363D"/>
+    <text x="508" y="1121" class="cmdText">$ byteclaw-build wakeup</text>
 
-    <text x="56" y="1108" class="section">✦ HOW IT WORKS</text>
+    {section_title('HOW IT WORKS', 1220)}
     {workflow_svg()}
 
-    <text x="56" y="1214" class="section">✦ TECH STACK</text>
-    {tech_pills_svg(techs)}
+    {section_title('TECH STACK', 1322)}
+    {centered_pills(techs, start_y=1354, max_width=796, start_x=52, gap=8, row_gap=34)}
 
-    <text x="56" y="1418" class="section">✦ GETTING STARTED</text>
+    {section_title('GETTING STARTED', 1446)}
     {command_cards_svg(commands)}
 
-    <text x="56" y="1688" class="section">✦ ENVIRONMENT VARIABLES</text>
+    {section_title('ENVIRONMENT VARIABLES', 1718)}
     {env_cards_svg(envs)}
 
-    <line x1="56" y1="1824" x2="944" y2="1824" stroke="#30363D"/>
-    <text x="500" y="1844" text-anchor="middle" class="muted">Built with ✦ by {esc(project.get('author', 'Ujjwal'))}</text>
+    <line x1="52" y1="1888" x2="848" y2="1888" stroke="#30363D"/>
+    <text x="450" y="1914" text-anchor="middle" class="muted">Built by {esc(project.get('author', 'Ujjwal'))}</text>
   </g>
 </svg>'''
 
@@ -484,7 +512,7 @@ def svg_document(config: Dict[str, Any]) -> str:
 def readme_document(config: Dict[str, Any]) -> str:
     project = config.get("project", {})
     name = project.get("name", "ByteClaw")
-    repo_url = project.get("repo_url", "#")
+    repo_url = project.get("repo_url", "https://github.com/UjjwalKumarKannojiya/ByteClaw-")
     return f'''<div align="center">
 
 <img src="./assets/byteclaw-readme.svg" width="100%" alt="{esc(name)} animated README interface" />
@@ -495,9 +523,9 @@ def readme_document(config: Dict[str, Any]) -> str:
 
 ```bash
 git clone {repo_url}.git
-cd {name}
-npm install
-npm run dev
+cd ByteClaw-
+bun install
+bun run dev
 ```
 
 ## CLI
@@ -513,6 +541,7 @@ Create a `.env` file and add the keys used by your setup:
 ```env
 OPENROUTER_API_KEY=
 TELEGRAM_BOT_TOKEN=
+TELEGRAM_CHAT_ID=
 FIRECRAWL_API_KEY=
 TAVILY_API_KEY=
 ```

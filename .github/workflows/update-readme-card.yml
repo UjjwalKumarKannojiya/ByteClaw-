@@ -1,45 +1,41 @@
-name: Update ByteClaw README Card
+name: Update README Card
 
 on:
   workflow_dispatch:
   push:
     branches:
-      - main
       - master
+      - main
     paths:
       - "package.json"
       - "bun.lock"
-      - "bun.lockb"
-      - "src/**"
-      - "scripts/generate_readme.py"
       - "readme_config.json"
-      - ".github/workflows/update-readme-card.yml"
-  schedule:
-    - cron: "0 */12 * * *"
+      - "scripts/generate_readme.py"
+      - "**/*.ts"
+      - "**/*.tsx"
+      - "**/*.js"
+      - "**/*.jsx"
 
 permissions:
   contents: write
 
 concurrency:
-  group: update-byteclaw-readme-card
+  group: update-byteclaw-readme
   cancel-in-progress: true
 
 jobs:
   update-readme-card:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
-      - name: Generate animated README card
+      - name: Generate aligned README card
         run: python scripts/generate_readme.py
 
       - name: Commit updated README assets
@@ -50,6 +46,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else
-            git commit -m "Update animated README card"
+            git commit -m "Update aligned ByteClaw README card"
             git push
           fi

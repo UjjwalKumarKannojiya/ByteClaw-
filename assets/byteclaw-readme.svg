@@ -1,378 +1,346 @@
-<svg width="1000" height="1860" viewBox="0 0 1000 1860" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ByteClaw animated README interface">
+<svg width="900" height="1940" viewBox="0 0 900 1940" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ByteClaw animated README interface">
   <defs>
-    <linearGradient id="titleGrad" x1="250" y1="40" x2="760" y2="120" gradientUnits="userSpaceOnUse">
+    <linearGradient id="titleGrad" x1="230" y1="40" x2="670" y2="120" gradientUnits="userSpaceOnUse">
       <stop stop-color="#58A6FF"/>
       <stop offset="0.55" stop-color="#A371F7"/>
       <stop offset="1" stop-color="#39D353"/>
     </linearGradient>
     <radialGradient id="glowBlue" cx="50%" cy="50%" r="50%"><stop stop-color="#58A6FF" stop-opacity="0.18"/><stop offset="1" stop-color="#58A6FF" stop-opacity="0"/></radialGradient>
     <radialGradient id="glowPurple" cx="50%" cy="50%" r="50%"><stop stop-color="#A371F7" stop-opacity="0.16"/><stop offset="1" stop-color="#A371F7" stop-opacity="0"/></radialGradient>
-    <filter id="softShadow"><feDropShadow dx="0" dy="12" stdDeviation="18" flood-color="#000000" flood-opacity="0.45"/></filter>
-    <clipPath id="clip"><rect width="1000" height="1860" rx="18"/></clipPath>
+    <clipPath id="clip"><rect width="900" height="1940" rx="18"/></clipPath>
     <style>
-      .title { font: 900 72px Inter, Segoe UI, Arial, sans-serif; letter-spacing: 8px; fill: #E6EDF3; }
-      .subtitle { font: 600 18px Inter, Segoe UI, Arial, sans-serif; fill: #E6EDF3; }
-      .desc { font: 500 15px Inter, Segoe UI, Arial, sans-serif; fill: #8B949E; }
-      .section { font: 800 15px ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; fill: #58A6FF; letter-spacing: 2.4px; }
-      .muted { font: 500 13px ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; fill: #8B949E; }
-      .pill { font: 800 12px ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; letter-spacing: .3px; }
-      .cardTitle { font: 800 16px Inter, Segoe UI, Arial, sans-serif; fill: #E6EDF3; }
-      .cardItem { font: 500 13px Inter, Segoe UI, Arial, sans-serif; fill: #8B949E; }
-      .featureIcon { font: 900 18px Inter, Segoe UI, Arial, sans-serif; }
-      .treeText { font: 600 14px ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; fill: #C9D1D9; }
-      .monoSmall { font: 800 12px ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
-      .cmdText { font: 700 13px ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; fill: #C9D1D9; }
-      .envKey { font: 800 13px ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; fill: #3FB950; }
-      .envHint { font: 500 11px ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; fill: #8B949E; }
+      .title { font: 900 58px Inter, Segoe UI, Arial, sans-serif; letter-spacing: 5px; fill: url(#titleGrad); }
+      .subtitle { font: 700 17px Inter, Segoe UI, Arial, sans-serif; fill: #E6EDF3; }
+      .desc { font: 500 14px Inter, Segoe UI, Arial, sans-serif; fill: #8B949E; }
+      .section { font: 800 14px ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; fill: #58A6FF; letter-spacing: 2px; }
+      .muted { font: 500 12px ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; fill: #8B949E; }
+      .pill { font: 800 11px ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; letter-spacing: .25px; }
+      .cardTitle { font: 800 15px Inter, Segoe UI, Arial, sans-serif; fill: #E6EDF3; }
+      .cardItem { font: 500 12px Inter, Segoe UI, Arial, sans-serif; fill: #8B949E; }
+      .featureIcon { font: 900 17px Inter, Segoe UI, Arial, sans-serif; }
+      .treeText { font: 600 13px ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; fill: #C9D1D9; }
+      .monoSmall { font: 800 11px ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
+      .cmdText { font: 700 12px ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; fill: #C9D1D9; }
+      .envKey { font: 800 12px ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; fill: #3FB950; }
+      .envHint { font: 500 10.5px ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; fill: #8B949E; }
     </style>
   </defs>
   <g clip-path="url(#clip)">
-    <rect width="1000" height="1860" rx="18" fill="#0D1117"/>
-    <rect x="1" y="1" width="998" height="1858" rx="17" stroke="#30363D"/>
+    <rect width="900" height="1940" rx="18" fill="#0D1117"/>
+    <rect x="1" y="1" width="898" height="1938" rx="17" stroke="#30363D"/>
 
-    <circle cx="120" cy="100" r="180" fill="url(#glowBlue)">
-      <animate attributeName="cx" values="120;170;120" dur="9s" repeatCount="indefinite"/>
-      <animate attributeName="cy" values="100;135;100" dur="9s" repeatCount="indefinite"/>
+    <circle cx="96" cy="92" r="150" fill="url(#glowBlue)">
+      <animate attributeName="cx" values="96;140;96" dur="9s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="92;126;92" dur="9s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="890" cy="170" r="220" fill="url(#glowPurple)">
-      <animate attributeName="cx" values="890;820;890" dur="11s" repeatCount="indefinite"/>
-      <animate attributeName="cy" values="170;115;170" dur="11s" repeatCount="indefinite"/>
+    <circle cx="806" cy="140" r="185" fill="url(#glowPurple)">
+      <animate attributeName="cx" values="806;748;806" dur="11s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="140;98;140" dur="11s" repeatCount="indefinite"/>
     </circle>
-    <path d="M210 105 C360 28 625 30 800 110" stroke="#58A6FF" stroke-width="1.5" stroke-dasharray="10 18" opacity="0.35">
+    <path d="M190 100 C320 32 560 34 718 104" stroke="#58A6FF" stroke-width="1.4" stroke-dasharray="10 18" opacity="0.35">
       <animate attributeName="stroke-dashoffset" values="0;-320" dur="8s" repeatCount="indefinite"/>
       <animate attributeName="opacity" values="0.18;0.48;0.18" dur="8s" repeatCount="indefinite"/>
     </path>
 
     <g>
-      <rect x="56" y="42" width="888" height="274" rx="18" fill="#0F1623" stroke="#30363D"/>
-      <g transform="translate(0 0)">
-        <text x="500" y="118" text-anchor="middle" class="title"><tspan fill="#58A6FF">BYTE</tspan><tspan fill="#E6EDF3">CLAW</tspan></text>
-        <animateTransform attributeName="transform" type="translate" values="0 0;0 -5;0 0" dur="6s" repeatCount="indefinite"/>
+      <rect x="32" y="32" width="836" height="286" rx="18" fill="#0F1623" stroke="#30363D"/>
+      <g>
+        <text x="450" y="112" text-anchor="middle" class="title">BYTECLAW</text>
+        <animateTransform attributeName="transform" type="translate" values="0 0;0 -4;0 0" dur="6s" repeatCount="indefinite"/>
       </g>
-      <text x="500" y="154" text-anchor="middle" class="subtitle">AI-powered terminal and Telegram assistant <tspan fill="#58A6FF">for understanding, planning, and modifying codebases.</tspan></text>
-      <text x="500" y="220" text-anchor="middle" class="desc">Run CLI workflows, ask questions about your project, generate implementation plans, and control coding t…</text>
+      <text x="450" y="148" text-anchor="middle" class="subtitle">AI-powered terminal and Telegram assistant</text>
+      <text x="450" y="172" text-anchor="middle" class="subtitle" fill="#58A6FF">for understanding, planning, and modifying codebases.</text>
       
-      <g transform="translate(245 178)">
-        <rect width="108" height="28" rx="14" fill="#58A6FF" fill-opacity="0.11" stroke="#58A6FF" stroke-opacity="0.42"/>
-        <text x="54.0" y="18" text-anchor="middle" class="pill" fill="#58A6FF">TypeScript</text>
-        <animateTransform attributeName="transform" type="translate" values="245 178;245 176;245 178" dur="5s" repeatCount="indefinite" additive="replace"/>
+      <g transform="translate(165 182)">
+        <rect width="96" height="26" rx="13" fill="#58A6FF" fill-opacity="0.11" stroke="#58A6FF" stroke-opacity="0.42"/>
+        <text x="48.0" y="17" text-anchor="middle" class="pill" fill="#58A6FF">TypeScript</text>
+        <animateTransform attributeName="transform" type="translate" values="165 182;165 180;165 182" dur="5s" repeatCount="indefinite" additive="replace"/>
       </g>
 
-      <g transform="translate(363 178)">
-        <rect width="84" height="28" rx="14" fill="#A371F7" fill-opacity="0.11" stroke="#A371F7" stroke-opacity="0.42"/>
-        <text x="42.0" y="18" text-anchor="middle" class="pill" fill="#A371F7">Node.js</text>
-        <animateTransform attributeName="transform" type="translate" values="363 178;363 176;363 178" dur="5s" repeatCount="indefinite" additive="replace"/>
+      <g transform="translate(269 182)">
+        <rect width="75" height="26" rx="13" fill="#A371F7" fill-opacity="0.11" stroke="#A371F7" stroke-opacity="0.42"/>
+        <text x="37.5" y="17" text-anchor="middle" class="pill" fill="#A371F7">Node.js</text>
+        <animateTransform attributeName="transform" type="translate" values="269 182;269 180;269 182" dur="5s" repeatCount="indefinite" additive="replace"/>
       </g>
 
-      <g transform="translate(457 178)">
-        <rect width="70" height="28" rx="14" fill="#3FB950" fill-opacity="0.11" stroke="#3FB950" stroke-opacity="0.42"/>
-        <text x="35.0" y="18" text-anchor="middle" class="pill" fill="#3FB950">CLI</text>
-        <animateTransform attributeName="transform" type="translate" values="457 178;457 176;457 178" dur="5s" repeatCount="indefinite" additive="replace"/>
+      <g transform="translate(352 182)">
+        <rect width="66" height="26" rx="13" fill="#3FB950" fill-opacity="0.11" stroke="#3FB950" stroke-opacity="0.42"/>
+        <text x="33.0" y="17" text-anchor="middle" class="pill" fill="#3FB950">Bun</text>
+        <animateTransform attributeName="transform" type="translate" values="352 182;352 180;352 182" dur="5s" repeatCount="indefinite" additive="replace"/>
       </g>
 
-      <g transform="translate(537 178)">
-        <rect width="124" height="28" rx="14" fill="#F85149" fill-opacity="0.11" stroke="#F85149" stroke-opacity="0.42"/>
-        <text x="62.0" y="18" text-anchor="middle" class="pill" fill="#F85149">Telegram Bot</text>
-        <animateTransform attributeName="transform" type="translate" values="537 178;537 176;537 178" dur="5s" repeatCount="indefinite" additive="replace"/>
+      <g transform="translate(426 182)">
+        <rect width="66" height="26" rx="13" fill="#D29922" fill-opacity="0.11" stroke="#D29922" stroke-opacity="0.42"/>
+        <text x="33.0" y="17" text-anchor="middle" class="pill" fill="#D29922">CLI</text>
+        <animateTransform attributeName="transform" type="translate" values="426 182;426 180;426 182" dur="5s" repeatCount="indefinite" additive="replace"/>
       </g>
 
-      <g transform="translate(671 178)">
-        <rect width="132" height="28" rx="14" fill="#D29922" fill-opacity="0.11" stroke="#D29922" stroke-opacity="0.42"/>
-        <text x="66.0" y="18" text-anchor="middle" class="pill" fill="#D29922">OpenRouter AI</text>
-        <animateTransform attributeName="transform" type="translate" values="671 178;671 176;671 178" dur="5s" repeatCount="indefinite" additive="replace"/>
+      <g transform="translate(500 182)">
+        <rect width="110" height="26" rx="13" fill="#F85149" fill-opacity="0.11" stroke="#F85149" stroke-opacity="0.42"/>
+        <text x="55.0" y="17" text-anchor="middle" class="pill" fill="#F85149">Telegram Bot</text>
+        <animateTransform attributeName="transform" type="translate" values="500 182;500 180;500 182" dur="5s" repeatCount="indefinite" additive="replace"/>
       </g>
 
-      <g transform="translate(813 178)">
-        <rect width="100" height="28" rx="14" fill="#39C5CF" fill-opacity="0.11" stroke="#39C5CF" stroke-opacity="0.42"/>
-        <text x="50.0" y="18" text-anchor="middle" class="pill" fill="#39C5CF">Web Tools</text>
-        <animateTransform attributeName="transform" type="translate" values="813 178;813 176;813 178" dur="5s" repeatCount="indefinite" additive="replace"/>
+      <g transform="translate(618 182)">
+        <rect width="117" height="26" rx="13" fill="#39C5CF" fill-opacity="0.11" stroke="#39C5CF" stroke-opacity="0.42"/>
+        <text x="58.5" y="17" text-anchor="middle" class="pill" fill="#39C5CF">OpenRouter AI</text>
+        <animateTransform attributeName="transform" type="translate" values="618 182;618 180;618 182" dur="5s" repeatCount="indefinite" additive="replace"/>
       </g>
-      <rect x="410" y="258" width="180" height="34" rx="17" fill="#161B22" stroke="#3FB950" stroke-opacity="0.5"/>
-      <circle cx="430" cy="275" r="5" fill="#3FB950"><animate attributeName="opacity" values="0.35;1;0.35" dur="1.4s" repeatCount="indefinite"/></circle>
-      <text x="450" y="280" class="muted">built for dev productivity</text>
+      <text x="450" y="242" text-anchor="middle" class="desc">Run CLI workflows, ask questions about your project, generate implementation</text><text x="450" y="262" text-anchor="middle" class="desc">plans,</text>
+      <rect x="338" y="278" width="224" height="28" rx="14" fill="#161B22" stroke="#3FB950" stroke-opacity="0.5"/>
+      <circle cx="358" cy="292" r="4.5" fill="#3FB950"><animate attributeName="opacity" values="0.35;1;0.35" dur="1.4s" repeatCount="indefinite"/></circle>
+      <text x="376" y="296" class="muted">built for dev productivity</text>
     </g>
 
-    <text x="56" y="360" class="section">✦ WHAT IS BYTECLAW?</text>
-    <rect x="56" y="378" width="888" height="2" fill="#30363D"/>
-    <text x="64" y="410" class="desc"><tspan fill="#58A6FF" font-weight="800">ByteClaw</tspan> is a developer assistant that combines terminal workflows, AI planning, local project understanding, and Telegram control.</text>
+    <text x="52" y="360" class="section">// WHAT IS BYTECLAW?</text><line x1="52" y1="376" x2="848" y2="376" stroke="#30363D"/>
+    <text x="60" y="404" class="desc"><tspan fill="#58A6FF" font-weight="800">ByteClaw</tspan> combines terminal workflows, AI planning, project understanding, and Telegram control.</text>
 
-    <text x="56" y="446" class="section">✦ FEATURES</text>
-
+    <text x="52" y="448" class="section">// FEATURES</text><line x1="52" y1="464" x2="848" y2="464" stroke="#30363D"/>
     
-    <g transform="translate(56 472)">
-      <rect width="286" height="156" rx="12" fill="#161B22" stroke="#30363D"/>
-      <rect x="0" y="0" width="286" height="3" rx="12" fill="#58A6FF">
+    <g transform="translate(52 482)">
+      <rect width="386" height="128" rx="12" fill="#161B22" stroke="#30363D"/>
+      <rect x="0" y="0" width="386" height="3" rx="12" fill="#58A6FF">
         <animate attributeName="opacity" values="0.45;1;0.45" dur="4.5s" begin="0.00s" repeatCount="indefinite"/>
       </rect>
-      <text x="20" y="34" class="featureIcon" fill="#58A6FF">▣</text>
-      <text x="48" y="34" class="cardTitle">CLI Mode</text>
-      <circle cx="22" cy="68" r="2.8" fill="#58A6FF"/><text x="34" y="72" class="cardItem">Interactive terminal workflows</text><circle cx="22" cy="88" r="2.8" fill="#58A6FF"/><text x="34" y="92" class="cardItem">Understand local project context</text><circle cx="22" cy="108" r="2.8" fill="#58A6FF"/><text x="34" y="112" class="cardItem">Markdown output rendering</text><circle cx="22" cy="128" r="2.8" fill="#58A6FF"/><text x="34" y="132" class="cardItem">Stylish terminal interface</text>
-      <animateTransform attributeName="transform" type="translate" values="56 472;56 469;56 472" dur="6s" begin="0.00s" repeatCount="indefinite" additive="replace"/>
+      <circle cx="28" cy="26" r="7" fill="#58A6FF" fill-opacity="0.18" stroke="#58A6FF"/>
+      <circle cx="28" cy="26" r="3" fill="#58A6FF"/>
+      <text x="48" y="32" class="cardTitle">CLI Mode</text>
+      <circle cx="22" cy="56" r="2.8" fill="#58A6FF"/><text x="34" y="60" class="cardItem">Interactive terminal workflows</text><circle cx="22" cy="74" r="2.8" fill="#58A6FF"/><text x="34" y="78" class="cardItem">Understand local project context</text><circle cx="22" cy="92" r="2.8" fill="#58A6FF"/><text x="34" y="96" class="cardItem">Markdown output rendering</text><circle cx="22" cy="110" r="2.8" fill="#58A6FF"/><text x="34" y="114" class="cardItem">Stylish terminal interface</text>
+      <animateTransform attributeName="transform" type="translate" values="52 482;52 480;52 482" dur="6s" begin="0.00s" repeatCount="indefinite" additive="replace"/>
     </g>
 
-    <g transform="translate(364 472)">
-      <rect width="286" height="156" rx="12" fill="#161B22" stroke="#30363D"/>
-      <rect x="0" y="0" width="286" height="3" rx="12" fill="#A371F7">
-        <animate attributeName="opacity" values="0.45;1;0.45" dur="4.5s" begin="0.25s" repeatCount="indefinite"/>
+    <g transform="translate(462 482)">
+      <rect width="386" height="128" rx="12" fill="#161B22" stroke="#30363D"/>
+      <rect x="0" y="0" width="386" height="3" rx="12" fill="#A371F7">
+        <animate attributeName="opacity" values="0.45;1;0.45" dur="4.5s" begin="0.20s" repeatCount="indefinite"/>
       </rect>
-      <text x="20" y="34" class="featureIcon" fill="#A371F7">◈</text>
-      <text x="48" y="34" class="cardTitle">Telegram Bot</text>
-      <circle cx="22" cy="68" r="2.8" fill="#A371F7"/><text x="34" y="72" class="cardItem">Control assistant remotely</text><circle cx="22" cy="88" r="2.8" fill="#A371F7"/><text x="34" y="92" class="cardItem">Run slash commands</text><circle cx="22" cy="108" r="2.8" fill="#A371F7"/><text x="34" y="112" class="cardItem">Plan and explain project changes</text><circle cx="22" cy="128" r="2.8" fill="#A371F7"/><text x="34" y="132" class="cardItem">Useful for quick mobile access</text>
-      <animateTransform attributeName="transform" type="translate" values="364 472;364 469;364 472" dur="6s" begin="0.18s" repeatCount="indefinite" additive="replace"/>
+      <circle cx="28" cy="26" r="7" fill="#A371F7" fill-opacity="0.18" stroke="#A371F7"/>
+      <circle cx="28" cy="26" r="3" fill="#A371F7"/>
+      <text x="48" y="32" class="cardTitle">Telegram Bot</text>
+      <circle cx="22" cy="56" r="2.8" fill="#A371F7"/><text x="34" y="60" class="cardItem">Control assistant remotely</text><circle cx="22" cy="74" r="2.8" fill="#A371F7"/><text x="34" y="78" class="cardItem">Run slash commands</text><circle cx="22" cy="92" r="2.8" fill="#A371F7"/><text x="34" y="96" class="cardItem">Plan and explain project changes</text><circle cx="22" cy="110" r="2.8" fill="#A371F7"/><text x="34" y="114" class="cardItem">Useful for mobile access</text>
+      <animateTransform attributeName="transform" type="translate" values="462 482;462 480;462 482" dur="6s" begin="0.18s" repeatCount="indefinite" additive="replace"/>
     </g>
 
-    <g transform="translate(672 472)">
-      <rect width="286" height="156" rx="12" fill="#161B22" stroke="#30363D"/>
-      <rect x="0" y="0" width="286" height="3" rx="12" fill="#3FB950">
-        <animate attributeName="opacity" values="0.45;1;0.45" dur="4.5s" begin="0.50s" repeatCount="indefinite"/>
+    <g transform="translate(52 630)">
+      <rect width="386" height="128" rx="12" fill="#161B22" stroke="#30363D"/>
+      <rect x="0" y="0" width="386" height="3" rx="12" fill="#3FB950">
+        <animate attributeName="opacity" values="0.45;1;0.45" dur="4.5s" begin="0.40s" repeatCount="indefinite"/>
       </rect>
-      <text x="20" y="34" class="featureIcon" fill="#3FB950">◆</text>
-      <text x="48" y="34" class="cardTitle">Ask Mode</text>
-      <circle cx="22" cy="68" r="2.8" fill="#3FB950"/><text x="34" y="72" class="cardItem">Ask questions about your codeba…</text><circle cx="22" cy="88" r="2.8" fill="#3FB950"/><text x="34" y="92" class="cardItem">Get structured answers</text><circle cx="22" cy="108" r="2.8" fill="#3FB950"/><text x="34" y="112" class="cardItem">Summarize project files</text><circle cx="22" cy="128" r="2.8" fill="#3FB950"/><text x="34" y="132" class="cardItem">Save responses as Markdown</text>
-      <animateTransform attributeName="transform" type="translate" values="672 472;672 469;672 472" dur="6s" begin="0.36s" repeatCount="indefinite" additive="replace"/>
+      <circle cx="28" cy="26" r="7" fill="#3FB950" fill-opacity="0.18" stroke="#3FB950"/>
+      <circle cx="28" cy="26" r="3" fill="#3FB950"/>
+      <text x="48" y="32" class="cardTitle">Ask Mode</text>
+      <circle cx="22" cy="56" r="2.8" fill="#3FB950"/><text x="34" y="60" class="cardItem">Ask questions about your codebase</text><circle cx="22" cy="74" r="2.8" fill="#3FB950"/><text x="34" y="78" class="cardItem">Get structured answers</text><circle cx="22" cy="92" r="2.8" fill="#3FB950"/><text x="34" y="96" class="cardItem">Summarize project files</text><circle cx="22" cy="110" r="2.8" fill="#3FB950"/><text x="34" y="114" class="cardItem">Save responses as Markdown</text>
+      <animateTransform attributeName="transform" type="translate" values="52 630;52 628;52 630" dur="6s" begin="0.36s" repeatCount="indefinite" additive="replace"/>
     </g>
 
-    <g transform="translate(56 650)">
-      <rect width="286" height="156" rx="12" fill="#161B22" stroke="#30363D"/>
-      <rect x="0" y="0" width="286" height="3" rx="12" fill="#F85149">
-        <animate attributeName="opacity" values="0.45;1;0.45" dur="4.5s" begin="0.75s" repeatCount="indefinite"/>
+    <g transform="translate(462 630)">
+      <rect width="386" height="128" rx="12" fill="#161B22" stroke="#30363D"/>
+      <rect x="0" y="0" width="386" height="3" rx="12" fill="#F85149">
+        <animate attributeName="opacity" values="0.45;1;0.45" dur="4.5s" begin="0.60s" repeatCount="indefinite"/>
       </rect>
-      <text x="20" y="34" class="featureIcon" fill="#F85149">✦</text>
-      <text x="48" y="34" class="cardTitle">Agent Mode</text>
-      <circle cx="22" cy="68" r="2.8" fill="#F85149"/><text x="34" y="72" class="cardItem">Multi-step workflow planning</text><circle cx="22" cy="88" r="2.8" fill="#F85149"/><text x="34" y="92" class="cardItem">File modification flow</text><circle cx="22" cy="108" r="2.8" fill="#F85149"/><text x="34" y="112" class="cardItem">Run actions with review</text><circle cx="22" cy="128" r="2.8" fill="#F85149"/><text x="34" y="132" class="cardItem">Command execution support</text>
-      <animateTransform attributeName="transform" type="translate" values="56 650;56 647;56 650" dur="6s" begin="0.54s" repeatCount="indefinite" additive="replace"/>
+      <circle cx="28" cy="26" r="7" fill="#F85149" fill-opacity="0.18" stroke="#F85149"/>
+      <circle cx="28" cy="26" r="3" fill="#F85149"/>
+      <text x="48" y="32" class="cardTitle">Agent Mode</text>
+      <circle cx="22" cy="56" r="2.8" fill="#F85149"/><text x="34" y="60" class="cardItem">Multi-step workflow planning</text><circle cx="22" cy="74" r="2.8" fill="#F85149"/><text x="34" y="78" class="cardItem">File modification flow</text><circle cx="22" cy="92" r="2.8" fill="#F85149"/><text x="34" y="96" class="cardItem">Run actions with review</text><circle cx="22" cy="110" r="2.8" fill="#F85149"/><text x="34" y="114" class="cardItem">Command execution support</text>
+      <animateTransform attributeName="transform" type="translate" values="462 630;462 628;462 630" dur="6s" begin="0.54s" repeatCount="indefinite" additive="replace"/>
     </g>
 
-    <g transform="translate(364 650)">
-      <rect width="286" height="156" rx="12" fill="#161B22" stroke="#30363D"/>
-      <rect x="0" y="0" width="286" height="3" rx="12" fill="#D29922">
+    <g transform="translate(52 778)">
+      <rect width="386" height="128" rx="12" fill="#161B22" stroke="#30363D"/>
+      <rect x="0" y="0" width="386" height="3" rx="12" fill="#D29922">
+        <animate attributeName="opacity" values="0.45;1;0.45" dur="4.5s" begin="0.80s" repeatCount="indefinite"/>
+      </rect>
+      <circle cx="28" cy="26" r="7" fill="#D29922" fill-opacity="0.18" stroke="#D29922"/>
+      <circle cx="28" cy="26" r="3" fill="#D29922"/>
+      <text x="48" y="32" class="cardTitle">Plan Mode</text>
+      <circle cx="22" cy="56" r="2.8" fill="#D29922"/><text x="34" y="60" class="cardItem">Generate step-by-step plans</text><circle cx="22" cy="74" r="2.8" fill="#D29922"/><text x="34" y="78" class="cardItem">Break down complex tasks</text><circle cx="22" cy="92" r="2.8" fill="#D29922"/><text x="34" y="96" class="cardItem">Compatibility checks</text><circle cx="22" cy="110" r="2.8" fill="#D29922"/><text x="34" y="114" class="cardItem">Safer execution flow</text>
+      <animateTransform attributeName="transform" type="translate" values="52 778;52 776;52 778" dur="6s" begin="0.72s" repeatCount="indefinite" additive="replace"/>
+    </g>
+
+    <g transform="translate(462 778)">
+      <rect width="386" height="128" rx="12" fill="#161B22" stroke="#30363D"/>
+      <rect x="0" y="0" width="386" height="3" rx="12" fill="#39C5CF">
         <animate attributeName="opacity" values="0.45;1;0.45" dur="4.5s" begin="1.00s" repeatCount="indefinite"/>
       </rect>
-      <text x="20" y="34" class="featureIcon" fill="#D29922">◍</text>
-      <text x="48" y="34" class="cardTitle">Plan Mode</text>
-      <circle cx="22" cy="68" r="2.8" fill="#D29922"/><text x="34" y="72" class="cardItem">Generate step-by-step plans</text><circle cx="22" cy="88" r="2.8" fill="#D29922"/><text x="34" y="92" class="cardItem">Break down complex tasks</text><circle cx="22" cy="108" r="2.8" fill="#D29922"/><text x="34" y="112" class="cardItem">Compatibility checks</text><circle cx="22" cy="128" r="2.8" fill="#D29922"/><text x="34" y="132" class="cardItem">Safer execution flow</text>
-      <animateTransform attributeName="transform" type="translate" values="364 650;364 647;364 650" dur="6s" begin="0.72s" repeatCount="indefinite" additive="replace"/>
+      <circle cx="28" cy="26" r="7" fill="#39C5CF" fill-opacity="0.18" stroke="#39C5CF"/>
+      <circle cx="28" cy="26" r="3" fill="#39C5CF"/>
+      <text x="48" y="32" class="cardTitle">Web Tools</text>
+      <circle cx="22" cy="56" r="2.8" fill="#39C5CF"/><text x="34" y="60" class="cardItem">Research and docs lookup</text><circle cx="22" cy="74" r="2.8" fill="#39C5CF"/><text x="34" y="78" class="cardItem">URL fetching</text><circle cx="22" cy="92" r="2.8" fill="#39C5CF"/><text x="34" y="96" class="cardItem">Web crawling</text><circle cx="22" cy="110" r="2.8" fill="#39C5CF"/><text x="34" y="114" class="cardItem">Documentation support</text>
+      <animateTransform attributeName="transform" type="translate" values="462 778;462 776;462 778" dur="6s" begin="0.90s" repeatCount="indefinite" additive="replace"/>
     </g>
 
-    <g transform="translate(672 650)">
-      <rect width="286" height="156" rx="12" fill="#161B22" stroke="#30363D"/>
-      <rect x="0" y="0" width="286" height="3" rx="12" fill="#39C5CF">
-        <animate attributeName="opacity" values="0.45;1;0.45" dur="4.5s" begin="1.25s" repeatCount="indefinite"/>
-      </rect>
-      <text x="20" y="34" class="featureIcon" fill="#39C5CF">✹</text>
-      <text x="48" y="34" class="cardTitle">Web Tools</text>
-      <circle cx="22" cy="68" r="2.8" fill="#39C5CF"/><text x="34" y="72" class="cardItem">Research and docs lookup</text><circle cx="22" cy="88" r="2.8" fill="#39C5CF"/><text x="34" y="92" class="cardItem">URL fetching</text><circle cx="22" cy="108" r="2.8" fill="#39C5CF"/><text x="34" y="112" class="cardItem">Web crawling</text><circle cx="22" cy="128" r="2.8" fill="#39C5CF"/><text x="34" y="132" class="cardItem">Documentation support</text>
-      <animateTransform attributeName="transform" type="translate" values="672 650;672 647;672 650" dur="6s" begin="0.90s" repeatCount="indefinite" additive="replace"/>
-    </g>
+    <text x="52" y="950" class="section">// PROJECT STRUCTURE</text><line x1="52" y1="966" x2="848" y2="966" stroke="#30363D"/>
+    <rect x="52" y="978" width="386" height="194" rx="12" fill="#161B22" stroke="#30363D"/>
+    <text x="76" y="1006" class="treeText">ByteClaw-/</text><text x="76" y="1024" class="treeText">|- ai/</text><text x="76" y="1042" class="treeText">|- modes/</text><text x="76" y="1060" class="treeText">|  |- agent/</text><text x="76" y="1078" class="treeText">|  |- ask/</text><text x="76" y="1096" class="treeText">|  |- plan/</text><text x="76" y="1114" class="treeText">|  `- telegram/</text><text x="76" y="1132" class="treeText">|- tui/</text><text x="76" y="1150" class="treeText">|- scripts/</text><text x="76" y="1168" class="treeText">`- index.ts</text>
+    <rect x="462" y="978" width="386" height="194" rx="12" fill="#161B22" stroke="#30363D"/>
+    <text x="490" y="1016" class="cardTitle">Terminal-first experience</text>
+    <text x="490" y="1046" class="cardItem">Designed for fast local workflows with clean prompts,</text>
+    <text x="490" y="1066" class="cardItem">AI-powered planning, and remote Telegram control.</text>
+    <rect x="490" y="1102" width="314" height="28" rx="6" fill="#0D1117" stroke="#30363D"/>
+    <text x="508" y="1121" class="cmdText">$ byteclaw-build wakeup</text>
 
-    <text x="56" y="830" class="section">✦ PROJECT STRUCTURE</text>
-    <rect x="56" y="850" width="432" height="164" rx="12" fill="#161B22" stroke="#30363D"/>
-    <text x="82" y="878" class="treeText">ByteClaw/</text><text x="82" y="898" class="treeText">├─ src/</text><text x="82" y="918" class="treeText">│  ├─ modes/</text><text x="82" y="938" class="treeText">│  │  ├─ cli.ts</text><text x="82" y="958" class="treeText">│  │  └─ telegram.ts</text><text x="82" y="978" class="treeText">│  ├─ agents/</text><text x="82" y="998" class="treeText">│  ├─ tools/</text><text x="82" y="1018" class="treeText">│  └─ index.ts</text><text x="82" y="1038" class="treeText">├─ scripts/</text><text x="82" y="1058" class="treeText">├─ package.json</text><text x="82" y="1078" class="treeText">└─ README.md</text>
-    <rect x="512" y="850" width="432" height="164" rx="12" fill="#161B22" stroke="#30363D"/>
-    <text x="540" y="886" class="cardTitle">Terminal-first experience</text>
-    <text x="540" y="916" class="cardItem">Designed for fast local workflows with clean prompts,</text>
-    <text x="540" y="938" class="cardItem">AI-powered planning, and remote Telegram control.</text>
-    <rect x="540" y="964" width="350" height="26" rx="6" fill="#0D1117" stroke="#30363D"/>
-    <text x="558" y="982" class="cmdText">$ byteclaw-build wakeup</text>
-
-    <text x="56" y="1108" class="section">✦ HOW IT WORKS</text>
+    <text x="52" y="1220" class="section">// HOW IT WORKS</text><line x1="52" y1="1236" x2="848" y2="1236" stroke="#30363D"/>
     
-      <g transform="translate(56 1132)">
-        <rect width="150" height="30" rx="7" fill="#0D1117" stroke="#58A6FF" stroke-opacity="0.5"/>
-        <text x="75.0" y="20" text-anchor="middle" class="monoSmall" fill="#58A6FF">Understand Repo</text>
+      <g transform="translate(76 1250)">
+        <rect width="108" height="30" rx="7" fill="#0D1117" stroke="#58A6FF" stroke-opacity="0.5"/>
+        <text x="54.0" y="20" text-anchor="middle" class="monoSmall" fill="#58A6FF">Understand</text>
       </g>
-<path d="M216 1147 H246" stroke="#30363D" stroke-width="2" stroke-dasharray="5 5"><animate attributeName="stroke-dashoffset" values="0;-40" dur="2s" repeatCount="indefinite"/></path>
+<path d="M194 1265 H218" stroke="#30363D" stroke-width="2" stroke-dasharray="5 5"><animate attributeName="stroke-dashoffset" values="0;-40" dur="2s" repeatCount="indefinite"/></path>
 
-      <g transform="translate(252 1132)">
-        <rect width="110" height="30" rx="7" fill="#0D1117" stroke="#A371F7" stroke-opacity="0.5"/>
-        <text x="55.0" y="20" text-anchor="middle" class="monoSmall" fill="#A371F7">Ask / Plan</text>
+      <g transform="translate(226 1250)">
+        <rect width="108" height="30" rx="7" fill="#0D1117" stroke="#A371F7" stroke-opacity="0.5"/>
+        <text x="54.0" y="20" text-anchor="middle" class="monoSmall" fill="#A371F7">Ask / Plan</text>
       </g>
-<path d="M372 1147 H402" stroke="#30363D" stroke-width="2" stroke-dasharray="5 5"><animate attributeName="stroke-dashoffset" values="0;-40" dur="2s" repeatCount="indefinite"/></path>
+<path d="M344 1265 H368" stroke="#30363D" stroke-width="2" stroke-dasharray="5 5"><animate attributeName="stroke-dashoffset" values="0;-40" dur="2s" repeatCount="indefinite"/></path>
 
-      <g transform="translate(408 1132)">
-        <rect width="118" height="30" rx="7" fill="#0D1117" stroke="#3FB950" stroke-opacity="0.5"/>
-        <text x="59.0" y="20" text-anchor="middle" class="monoSmall" fill="#3FB950">Run Actions</text>
+      <g transform="translate(376 1250)">
+        <rect width="116" height="30" rx="7" fill="#0D1117" stroke="#3FB950" stroke-opacity="0.5"/>
+        <text x="58.0" y="20" text-anchor="middle" class="monoSmall" fill="#3FB950">Run Actions</text>
       </g>
-<path d="M536 1147 H566" stroke="#30363D" stroke-width="2" stroke-dasharray="5 5"><animate attributeName="stroke-dashoffset" values="0;-40" dur="2s" repeatCount="indefinite"/></path>
+<path d="M502 1265 H526" stroke="#30363D" stroke-width="2" stroke-dasharray="5 5"><animate attributeName="stroke-dashoffset" values="0;-40" dur="2s" repeatCount="indefinite"/></path>
 
-      <g transform="translate(572 1132)">
-        <rect width="142" height="30" rx="7" fill="#0D1117" stroke="#D29922" stroke-opacity="0.5"/>
-        <text x="71.0" y="20" text-anchor="middle" class="monoSmall" fill="#D29922">CLI / Telegram</text>
+      <g transform="translate(534 1250)">
+        <rect width="88" height="30" rx="7" fill="#0D1117" stroke="#D29922" stroke-opacity="0.5"/>
+        <text x="44.0" y="20" text-anchor="middle" class="monoSmall" fill="#D29922">Review</text>
       </g>
-<path d="M724 1147 H754" stroke="#30363D" stroke-width="2" stroke-dasharray="5 5"><animate attributeName="stroke-dashoffset" values="0;-40" dur="2s" repeatCount="indefinite"/></path>
+<path d="M632 1265 H656" stroke="#30363D" stroke-width="2" stroke-dasharray="5 5"><animate attributeName="stroke-dashoffset" values="0;-40" dur="2s" repeatCount="indefinite"/></path>
 
-      <g transform="translate(760 1132)">
+      <g transform="translate(664 1250)">
         <rect width="92" height="30" rx="7" fill="#0D1117" stroke="#F85149" stroke-opacity="0.5"/>
-        <text x="46.0" y="20" text-anchor="middle" class="monoSmall" fill="#F85149">Review</text>
+        <text x="46.0" y="20" text-anchor="middle" class="monoSmall" fill="#F85149">Telegram</text>
       </g>
 
-    <text x="56" y="1214" class="section">✦ TECH STACK</text>
+    <text x="52" y="1322" class="section">// TECH STACK</text><line x1="52" y1="1338" x2="848" y2="1338" stroke="#30363D"/>
     
-      <g transform="translate(56 1238)">
-        <rect width="108" height="28" rx="14" fill="#58A6FF" fill-opacity="0.11" stroke="#58A6FF" stroke-opacity="0.42"/>
-        <text x="54.0" y="18" text-anchor="middle" class="pill" fill="#58A6FF">TypeScript</text>
-        <animateTransform attributeName="transform" type="translate" values="56 1238;56 1236;56 1238" dur="5s" repeatCount="indefinite" additive="replace"/>
+      <g transform="translate(53 1354)">
+        <rect width="96" height="26" rx="13" fill="#58A6FF" fill-opacity="0.11" stroke="#58A6FF" stroke-opacity="0.42"/>
+        <text x="48.0" y="17" text-anchor="middle" class="pill" fill="#58A6FF">TypeScript</text>
+        <animateTransform attributeName="transform" type="translate" values="53 1354;53 1352;53 1354" dur="5s" repeatCount="indefinite" additive="replace"/>
       </g>
 
-      <g transform="translate(174 1238)">
-        <rect width="108" height="28" rx="14" fill="#A371F7" fill-opacity="0.11" stroke="#A371F7" stroke-opacity="0.42"/>
-        <text x="54.0" y="18" text-anchor="middle" class="pill" fill="#A371F7">JavaScript</text>
-        <animateTransform attributeName="transform" type="translate" values="174 1238;174 1236;174 1238" dur="5s" repeatCount="indefinite" additive="replace"/>
+      <g transform="translate(157 1354)">
+        <rect width="96" height="26" rx="13" fill="#A371F7" fill-opacity="0.11" stroke="#A371F7" stroke-opacity="0.42"/>
+        <text x="48.0" y="17" text-anchor="middle" class="pill" fill="#A371F7">JavaScript</text>
+        <animateTransform attributeName="transform" type="translate" values="157 1354;157 1352;157 1354" dur="5s" repeatCount="indefinite" additive="replace"/>
       </g>
 
-      <g transform="translate(292 1238)">
-        <rect width="84" height="28" rx="14" fill="#3FB950" fill-opacity="0.11" stroke="#3FB950" stroke-opacity="0.42"/>
-        <text x="42.0" y="18" text-anchor="middle" class="pill" fill="#3FB950">Node.js</text>
-        <animateTransform attributeName="transform" type="translate" values="292 1238;292 1236;292 1238" dur="5s" repeatCount="indefinite" additive="replace"/>
+      <g transform="translate(261 1354)">
+        <rect width="75" height="26" rx="13" fill="#3FB950" fill-opacity="0.11" stroke="#3FB950" stroke-opacity="0.42"/>
+        <text x="37.5" y="17" text-anchor="middle" class="pill" fill="#3FB950">Node.js</text>
+        <animateTransform attributeName="transform" type="translate" values="261 1354;261 1352;261 1354" dur="5s" repeatCount="indefinite" additive="replace"/>
       </g>
 
-      <g transform="translate(386 1238)">
-        <rect width="70" height="28" rx="14" fill="#D29922" fill-opacity="0.11" stroke="#D29922" stroke-opacity="0.42"/>
-        <text x="35.0" y="18" text-anchor="middle" class="pill" fill="#D29922">Bun</text>
-        <animateTransform attributeName="transform" type="translate" values="386 1238;386 1236;386 1238" dur="5s" repeatCount="indefinite" additive="replace"/>
+      <g transform="translate(344 1354)">
+        <rect width="66" height="26" rx="13" fill="#D29922" fill-opacity="0.11" stroke="#D29922" stroke-opacity="0.42"/>
+        <text x="33.0" y="17" text-anchor="middle" class="pill" fill="#D29922">Bun</text>
+        <animateTransform attributeName="transform" type="translate" values="344 1354;344 1352;344 1354" dur="5s" repeatCount="indefinite" additive="replace"/>
       </g>
 
-      <g transform="translate(466 1238)">
-        <rect width="124" height="28" rx="14" fill="#F85149" fill-opacity="0.11" stroke="#F85149" stroke-opacity="0.42"/>
-        <text x="62.0" y="18" text-anchor="middle" class="pill" fill="#F85149">Telegram Bot</text>
-        <animateTransform attributeName="transform" type="translate" values="466 1238;466 1236;466 1238" dur="5s" repeatCount="indefinite" additive="replace"/>
+      <g transform="translate(418 1354)">
+        <rect width="110" height="26" rx="13" fill="#F85149" fill-opacity="0.11" stroke="#F85149" stroke-opacity="0.42"/>
+        <text x="55.0" y="17" text-anchor="middle" class="pill" fill="#F85149">Telegram Bot</text>
+        <animateTransform attributeName="transform" type="translate" values="418 1354;418 1352;418 1354" dur="5s" repeatCount="indefinite" additive="replace"/>
       </g>
 
-      <g transform="translate(600 1238)">
-        <rect width="132" height="28" rx="14" fill="#39C5CF" fill-opacity="0.11" stroke="#39C5CF" stroke-opacity="0.42"/>
-        <text x="66.0" y="18" text-anchor="middle" class="pill" fill="#39C5CF">Clack Prompts</text>
-        <animateTransform attributeName="transform" type="translate" values="600 1238;600 1236;600 1238" dur="5s" repeatCount="indefinite" additive="replace"/>
+      <g transform="translate(536 1354)">
+        <rect width="89" height="26" rx="13" fill="#39C5CF" fill-opacity="0.11" stroke="#39C5CF" stroke-opacity="0.42"/>
+        <text x="44.5" y="17" text-anchor="middle" class="pill" fill="#39C5CF">Firecrawl</text>
+        <animateTransform attributeName="transform" type="translate" values="536 1354;536 1352;536 1354" dur="5s" repeatCount="indefinite" additive="replace"/>
       </g>
 
-      <g transform="translate(742 1238)">
-        <rect width="70" height="28" rx="14" fill="#58A6FF" fill-opacity="0.11" stroke="#58A6FF" stroke-opacity="0.42"/>
-        <text x="35.0" y="18" text-anchor="middle" class="pill" fill="#58A6FF">Chalk</text>
-        <animateTransform attributeName="transform" type="translate" values="742 1238;742 1236;742 1238" dur="5s" repeatCount="indefinite" additive="replace"/>
+      <g transform="translate(633 1354)">
+        <rect width="82" height="26" rx="13" fill="#58A6FF" fill-opacity="0.11" stroke="#58A6FF" stroke-opacity="0.42"/>
+        <text x="41.0" y="17" text-anchor="middle" class="pill" fill="#58A6FF">Markdown</text>
+        <animateTransform attributeName="transform" type="translate" values="633 1354;633 1352;633 1354" dur="5s" repeatCount="indefinite" additive="replace"/>
       </g>
 
-      <g transform="translate(822 1238)">
-        <rect width="76" height="28" rx="14" fill="#A371F7" fill-opacity="0.11" stroke="#A371F7" stroke-opacity="0.42"/>
-        <text x="38.0" y="18" text-anchor="middle" class="pill" fill="#A371F7">Figlet</text>
-        <animateTransform attributeName="transform" type="translate" values="822 1238;822 1236;822 1238" dur="5s" repeatCount="indefinite" additive="replace"/>
+      <g transform="translate(723 1354)">
+        <rect width="124" height="26" rx="13" fill="#A371F7" fill-opacity="0.11" stroke="#A371F7" stroke-opacity="0.42"/>
+        <text x="62.0" y="17" text-anchor="middle" class="pill" fill="#A371F7">GitHub Actions</text>
+        <animateTransform attributeName="transform" type="translate" values="723 1354;723 1352;723 1354" dur="5s" repeatCount="indefinite" additive="replace"/>
       </g>
 
-      <g transform="translate(56 1278)">
-        <rect width="92" height="28" rx="14" fill="#3FB950" fill-opacity="0.11" stroke="#3FB950" stroke-opacity="0.42"/>
-        <text x="46.0" y="18" text-anchor="middle" class="pill" fill="#3FB950">Markdown</text>
-        <animateTransform attributeName="transform" type="translate" values="56 1278;56 1276;56 1278" dur="5s" repeatCount="indefinite" additive="replace"/>
+      <g transform="translate(317 1388)">
+        <rect width="66" height="26" rx="13" fill="#3FB950" fill-opacity="0.11" stroke="#3FB950" stroke-opacity="0.42"/>
+        <text x="33.0" y="17" text-anchor="middle" class="pill" fill="#3FB950">Cli</text>
+        <animateTransform attributeName="transform" type="translate" values="317 1388;317 1386;317 1388" dur="5s" repeatCount="indefinite" additive="replace"/>
       </g>
 
-      <g transform="translate(158 1278)">
-        <rect width="140" height="28" rx="14" fill="#D29922" fill-opacity="0.11" stroke="#D29922" stroke-opacity="0.42"/>
-        <text x="70.0" y="18" text-anchor="middle" class="pill" fill="#D29922">GitHub Actions</text>
-        <animateTransform attributeName="transform" type="translate" values="158 1278;158 1276;158 1278" dur="5s" repeatCount="indefinite" additive="replace"/>
+      <g transform="translate(391 1388)">
+        <rect width="66" height="26" rx="13" fill="#D29922" fill-opacity="0.11" stroke="#D29922" stroke-opacity="0.42"/>
+        <text x="33.0" y="17" text-anchor="middle" class="pill" fill="#D29922">Json</text>
+        <animateTransform attributeName="transform" type="translate" values="391 1388;391 1386;391 1388" dur="5s" repeatCount="indefinite" additive="replace"/>
       </g>
 
-      <g transform="translate(308 1278)">
-        <rect width="76" height="28" rx="14" fill="#F85149" fill-opacity="0.11" stroke="#F85149" stroke-opacity="0.42"/>
-        <text x="38.0" y="18" text-anchor="middle" class="pill" fill="#F85149">Ai Sdk</text>
-        <animateTransform attributeName="transform" type="translate" values="308 1278;308 1276;308 1278" dur="5s" repeatCount="indefinite" additive="replace"/>
+      <g transform="translate(465 1388)">
+        <rect width="117" height="26" rx="13" fill="#F85149" fill-opacity="0.11" stroke="#F85149" stroke-opacity="0.42"/>
+        <text x="58.5" y="17" text-anchor="middle" class="pill" fill="#F85149">Openrouter Ai</text>
+        <animateTransform attributeName="transform" type="translate" values="465 1388;465 1386;465 1388" dur="5s" repeatCount="indefinite" additive="replace"/>
       </g>
 
-      <g transform="translate(394 1278)">
-        <rect width="70" height="28" rx="14" fill="#39C5CF" fill-opacity="0.11" stroke="#39C5CF" stroke-opacity="0.42"/>
-        <text x="35.0" y="18" text-anchor="middle" class="pill" fill="#39C5CF">Cli</text>
-        <animateTransform attributeName="transform" type="translate" values="394 1278;394 1276;394 1278" dur="5s" repeatCount="indefinite" additive="replace"/>
-      </g>
-
-      <g transform="translate(474 1278)">
-        <rect width="100" height="28" rx="14" fill="#58A6FF" fill-opacity="0.11" stroke="#58A6FF" stroke-opacity="0.42"/>
-        <text x="50.0" y="18" text-anchor="middle" class="pill" fill="#58A6FF">Commander</text>
-        <animateTransform attributeName="transform" type="translate" values="474 1278;474 1276;474 1278" dur="5s" repeatCount="indefinite" additive="replace"/>
-      </g>
-
-      <g transform="translate(584 1278)">
-        <rect width="70" height="28" rx="14" fill="#A371F7" fill-opacity="0.11" stroke="#A371F7" stroke-opacity="0.42"/>
-        <text x="35.0" y="18" text-anchor="middle" class="pill" fill="#A371F7">Diff</text>
-        <animateTransform attributeName="transform" type="translate" values="584 1278;584 1276;584 1278" dur="5s" repeatCount="indefinite" additive="replace"/>
-      </g>
-
-      <g transform="translate(664 1278)">
-        <rect width="108" height="28" rx="14" fill="#3FB950" fill-opacity="0.11" stroke="#3FB950" stroke-opacity="0.42"/>
-        <text x="54.0" y="18" text-anchor="middle" class="pill" fill="#3FB950">Es Modules</text>
-        <animateTransform attributeName="transform" type="translate" values="664 1278;664 1276;664 1278" dur="5s" repeatCount="indefinite" additive="replace"/>
-      </g>
-
-      <g transform="translate(782 1278)">
-        <rect width="100" height="28" rx="14" fill="#D29922" fill-opacity="0.11" stroke="#D29922" stroke-opacity="0.42"/>
-        <text x="50.0" y="18" text-anchor="middle" class="pill" fill="#D29922">Firecrawl</text>
-        <animateTransform attributeName="transform" type="translate" values="782 1278;782 1276;782 1278" dur="5s" repeatCount="indefinite" additive="replace"/>
-      </g>
-
-      <g transform="translate(56 1318)">
-        <rect width="70" height="28" rx="14" fill="#F85149" fill-opacity="0.11" stroke="#F85149" stroke-opacity="0.42"/>
-        <text x="35.0" y="18" text-anchor="middle" class="pill" fill="#F85149">Json</text>
-        <animateTransform attributeName="transform" type="translate" values="56 1318;56 1316;56 1318" dur="5s" repeatCount="indefinite" additive="replace"/>
-      </g>
-
-      <g transform="translate(136 1318)">
-        <rect width="76" height="28" rx="14" fill="#39C5CF" fill-opacity="0.11" stroke="#39C5CF" stroke-opacity="0.42"/>
-        <text x="38.0" y="18" text-anchor="middle" class="pill" fill="#39C5CF">Marked</text>
-        <animateTransform attributeName="transform" type="translate" values="136 1318;136 1316;136 1318" dur="5s" repeatCount="indefinite" additive="replace"/>
-      </g>
-
-    <text x="56" y="1418" class="section">✦ GETTING STARTED</text>
+    <text x="52" y="1446" class="section">// GETTING STARTED</text><line x1="52" y1="1462" x2="848" y2="1462" stroke="#30363D"/>
     
-    <g transform="translate(56 1442)">
-      <rect width="434" height="92" rx="11" fill="#161B22" stroke="#30363D"/>
-      <circle cx="22" cy="24" r="6" fill="#58A6FF"/>
-      <text x="40" y="29" class="cardTitle">Clone</text>
-      <text x="24" y="52" class="cmdText">git clone https://github.com/UjjwalKumarKannojiya/ByteClaw.git</text><text x="24" y="70" class="cmdText">cd ByteClaw</text>
+    <g transform="translate(52 1476)">
+      <rect width="386" height="84" rx="11" fill="#161B22" stroke="#30363D"/>
+      <circle cx="22" cy="23" r="6" fill="#58A6FF"/>
+      <text x="40" y="28" class="cardTitle">Clone</text>
+      <text x="24" y="50" class="cmdText">git clone https://github.com/UjjwalKumarK…</text><text x="24" y="67" class="cmdText">cd ByteClaw-</text>
     </g>
 
-    <g transform="translate(510 1442)">
-      <rect width="434" height="92" rx="11" fill="#161B22" stroke="#30363D"/>
-      <circle cx="22" cy="24" r="6" fill="#A371F7"/>
-      <text x="40" y="29" class="cardTitle">Install</text>
-      <text x="24" y="52" class="cmdText">npm install</text><text x="24" y="70" class="cmdText"># or</text><text x="24" y="88" class="cmdText">bun install</text>
+    <g transform="translate(462 1476)">
+      <rect width="386" height="84" rx="11" fill="#161B22" stroke="#30363D"/>
+      <circle cx="22" cy="23" r="6" fill="#A371F7"/>
+      <text x="40" y="28" class="cardTitle">Install</text>
+      <text x="24" y="50" class="cmdText">bun install</text><text x="24" y="67" class="cmdText"># or npm install</text>
     </g>
 
-    <g transform="translate(56 1554)">
-      <rect width="434" height="92" rx="11" fill="#161B22" stroke="#30363D"/>
-      <circle cx="22" cy="24" r="6" fill="#3FB950"/>
-      <text x="40" y="29" class="cardTitle">Run</text>
-      <text x="24" y="52" class="cmdText">npm run dev</text><text x="24" y="70" class="cmdText"># or</text><text x="24" y="88" class="cmdText">bun run dev</text>
+    <g transform="translate(52 1578)">
+      <rect width="386" height="84" rx="11" fill="#161B22" stroke="#30363D"/>
+      <circle cx="22" cy="23" r="6" fill="#3FB950"/>
+      <text x="40" y="28" class="cardTitle">Run Dev</text>
+      <text x="24" y="50" class="cmdText">bun run dev</text><text x="24" y="67" class="cmdText"># or npm run dev</text>
     </g>
 
-    <g transform="translate(510 1554)">
-      <rect width="434" height="92" rx="11" fill="#161B22" stroke="#30363D"/>
-      <circle cx="22" cy="24" r="6" fill="#D29922"/>
-      <text x="40" y="29" class="cardTitle">CLI</text>
-      <text x="24" y="52" class="cmdText">byteclaw-build wakeup</text>
+    <g transform="translate(462 1578)">
+      <rect width="386" height="84" rx="11" fill="#161B22" stroke="#30363D"/>
+      <circle cx="22" cy="23" r="6" fill="#D29922"/>
+      <text x="40" y="28" class="cardTitle">CLI</text>
+      <text x="24" y="50" class="cmdText">byteclaw-build wakeup</text>
     </g>
 
-    <text x="56" y="1688" class="section">✦ ENVIRONMENT VARIABLES</text>
+    <text x="52" y="1718" class="section">// ENVIRONMENT VARIABLES</text><line x1="52" y1="1734" x2="848" y2="1734" stroke="#30363D"/>
     
-    <g transform="translate(56 1712)">
-      <rect width="286" height="54" rx="9" fill="#161B22" stroke="#30363D"/>
-      <text x="18" y="23" class="envKey">OPENROUTER_API_KEY</text>
-      <text x="18" y="40" class="envHint">paste your key here</text>
+    <g transform="translate(52 1748)">
+      <rect width="246" height="48" rx="9" fill="#161B22" stroke="#30363D"/>
+      <text x="16" y="21" class="envKey">OPENROUTER_API_KEY</text>
+      <text x="16" y="37" class="envHint">paste your key here</text>
     </g>
 
-    <g transform="translate(364 1712)">
-      <rect width="286" height="54" rx="9" fill="#161B22" stroke="#30363D"/>
-      <text x="18" y="23" class="envKey">TELEGRAM_BOT_TOKEN</text>
-      <text x="18" y="40" class="envHint">paste your key here</text>
+    <g transform="translate(326 1748)">
+      <rect width="246" height="48" rx="9" fill="#161B22" stroke="#30363D"/>
+      <text x="16" y="21" class="envKey">TELEGRAM_BOT_TOKEN</text>
+      <text x="16" y="37" class="envHint">paste your key here</text>
     </g>
 
-    <g transform="translate(672 1712)">
-      <rect width="286" height="54" rx="9" fill="#161B22" stroke="#30363D"/>
-      <text x="18" y="23" class="envKey">FIRECRAWL_API_KEY</text>
-      <text x="18" y="40" class="envHint">paste your key here</text>
+    <g transform="translate(600 1748)">
+      <rect width="246" height="48" rx="9" fill="#161B22" stroke="#30363D"/>
+      <text x="16" y="21" class="envKey">TELEGRAM_CHAT_ID</text>
+      <text x="16" y="37" class="envHint">paste your key here</text>
     </g>
 
-    <g transform="translate(56 1784)">
-      <rect width="286" height="54" rx="9" fill="#161B22" stroke="#30363D"/>
-      <text x="18" y="23" class="envKey">TAVILY_API_KEY</text>
-      <text x="18" y="40" class="envHint">paste your key here</text>
+    <g transform="translate(52 1810)">
+      <rect width="246" height="48" rx="9" fill="#161B22" stroke="#30363D"/>
+      <text x="16" y="21" class="envKey">FIRECRAWL_API_KEY</text>
+      <text x="16" y="37" class="envHint">paste your key here</text>
     </g>
 
-    <line x1="56" y1="1824" x2="944" y2="1824" stroke="#30363D"/>
-    <text x="500" y="1844" text-anchor="middle" class="muted">Built with ✦ by Ujjwal Kumar Kannojiya</text>
+    <g transform="translate(326 1810)">
+      <rect width="246" height="48" rx="9" fill="#161B22" stroke="#30363D"/>
+      <text x="16" y="21" class="envKey">TAVILY_API_KEY</text>
+      <text x="16" y="37" class="envHint">paste your key here</text>
+    </g>
+
+    <line x1="52" y1="1888" x2="848" y2="1888" stroke="#30363D"/>
+    <text x="450" y="1914" text-anchor="middle" class="muted">Built by Ujjwal Kumar Kannojiya</text>
   </g>
 </svg>
