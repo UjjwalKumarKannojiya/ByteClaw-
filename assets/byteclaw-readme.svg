@@ -1,0 +1,336 @@
+<svg width="1000" height="1860" viewBox="0 0 1000 1860" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ByteClaw animated README interface">
+  <defs>
+    <linearGradient id="titleGrad" x1="250" y1="40" x2="760" y2="120" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#58A6FF"/>
+      <stop offset="0.55" stop-color="#A371F7"/>
+      <stop offset="1" stop-color="#39D353"/>
+    </linearGradient>
+    <radialGradient id="glowBlue" cx="50%" cy="50%" r="50%"><stop stop-color="#58A6FF" stop-opacity="0.18"/><stop offset="1" stop-color="#58A6FF" stop-opacity="0"/></radialGradient>
+    <radialGradient id="glowPurple" cx="50%" cy="50%" r="50%"><stop stop-color="#A371F7" stop-opacity="0.16"/><stop offset="1" stop-color="#A371F7" stop-opacity="0"/></radialGradient>
+    <filter id="softShadow"><feDropShadow dx="0" dy="12" stdDeviation="18" flood-color="#000000" flood-opacity="0.45"/></filter>
+    <clipPath id="clip"><rect width="1000" height="1860" rx="18"/></clipPath>
+    <style>
+      .title { font: 900 72px Inter, Segoe UI, Arial, sans-serif; letter-spacing: 8px; fill: #E6EDF3; }
+      .subtitle { font: 600 18px Inter, Segoe UI, Arial, sans-serif; fill: #E6EDF3; }
+      .desc { font: 500 15px Inter, Segoe UI, Arial, sans-serif; fill: #8B949E; }
+      .section { font: 800 15px ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; fill: #58A6FF; letter-spacing: 2.4px; }
+      .muted { font: 500 13px ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; fill: #8B949E; }
+      .pill { font: 800 12px ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; letter-spacing: .3px; }
+      .cardTitle { font: 800 16px Inter, Segoe UI, Arial, sans-serif; fill: #E6EDF3; }
+      .cardItem { font: 500 13px Inter, Segoe UI, Arial, sans-serif; fill: #8B949E; }
+      .featureIcon { font: 900 18px Inter, Segoe UI, Arial, sans-serif; }
+      .treeText { font: 600 14px ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; fill: #C9D1D9; }
+      .monoSmall { font: 800 12px ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
+      .cmdText { font: 700 13px ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; fill: #C9D1D9; }
+      .envKey { font: 800 13px ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; fill: #3FB950; }
+      .envHint { font: 500 11px ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; fill: #8B949E; }
+    </style>
+  </defs>
+  <g clip-path="url(#clip)">
+    <rect width="1000" height="1860" rx="18" fill="#0D1117"/>
+    <rect x="1" y="1" width="998" height="1858" rx="17" stroke="#30363D"/>
+
+    <circle cx="120" cy="100" r="180" fill="url(#glowBlue)">
+      <animate attributeName="cx" values="120;170;120" dur="9s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="100;135;100" dur="9s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="890" cy="170" r="220" fill="url(#glowPurple)">
+      <animate attributeName="cx" values="890;820;890" dur="11s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="170;115;170" dur="11s" repeatCount="indefinite"/>
+    </circle>
+    <path d="M210 105 C360 28 625 30 800 110" stroke="#58A6FF" stroke-width="1.5" stroke-dasharray="10 18" opacity="0.35">
+      <animate attributeName="stroke-dashoffset" values="0;-320" dur="8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.18;0.48;0.18" dur="8s" repeatCount="indefinite"/>
+    </path>
+
+    <g>
+      <rect x="56" y="42" width="888" height="274" rx="18" fill="#0F1623" stroke="#30363D"/>
+      <g transform="translate(0 0)">
+        <text x="500" y="118" text-anchor="middle" class="title"><tspan fill="#58A6FF">BYTE</tspan><tspan fill="#E6EDF3">CLAW</tspan></text>
+        <animateTransform attributeName="transform" type="translate" values="0 0;0 -5;0 0" dur="6s" repeatCount="indefinite"/>
+      </g>
+      <text x="500" y="154" text-anchor="middle" class="subtitle">AI-powered terminal and Telegram assistant <tspan fill="#58A6FF">for understanding, planning, and modifying codebases.</tspan></text>
+      <text x="500" y="220" text-anchor="middle" class="desc">Run CLI workflows, ask questions about your project, generate implementation plans, and control coding t…</text>
+      
+      <g transform="translate(245 178)">
+        <rect width="108" height="28" rx="14" fill="#58A6FF" fill-opacity="0.11" stroke="#58A6FF" stroke-opacity="0.42"/>
+        <text x="54.0" y="18" text-anchor="middle" class="pill" fill="#58A6FF">TypeScript</text>
+        <animateTransform attributeName="transform" type="translate" values="245 178;245 176;245 178" dur="5s" repeatCount="indefinite" additive="replace"/>
+      </g>
+
+      <g transform="translate(363 178)">
+        <rect width="84" height="28" rx="14" fill="#A371F7" fill-opacity="0.11" stroke="#A371F7" stroke-opacity="0.42"/>
+        <text x="42.0" y="18" text-anchor="middle" class="pill" fill="#A371F7">Node.js</text>
+        <animateTransform attributeName="transform" type="translate" values="363 178;363 176;363 178" dur="5s" repeatCount="indefinite" additive="replace"/>
+      </g>
+
+      <g transform="translate(457 178)">
+        <rect width="70" height="28" rx="14" fill="#3FB950" fill-opacity="0.11" stroke="#3FB950" stroke-opacity="0.42"/>
+        <text x="35.0" y="18" text-anchor="middle" class="pill" fill="#3FB950">CLI</text>
+        <animateTransform attributeName="transform" type="translate" values="457 178;457 176;457 178" dur="5s" repeatCount="indefinite" additive="replace"/>
+      </g>
+
+      <g transform="translate(537 178)">
+        <rect width="124" height="28" rx="14" fill="#F85149" fill-opacity="0.11" stroke="#F85149" stroke-opacity="0.42"/>
+        <text x="62.0" y="18" text-anchor="middle" class="pill" fill="#F85149">Telegram Bot</text>
+        <animateTransform attributeName="transform" type="translate" values="537 178;537 176;537 178" dur="5s" repeatCount="indefinite" additive="replace"/>
+      </g>
+
+      <g transform="translate(671 178)">
+        <rect width="132" height="28" rx="14" fill="#D29922" fill-opacity="0.11" stroke="#D29922" stroke-opacity="0.42"/>
+        <text x="66.0" y="18" text-anchor="middle" class="pill" fill="#D29922">OpenRouter AI</text>
+        <animateTransform attributeName="transform" type="translate" values="671 178;671 176;671 178" dur="5s" repeatCount="indefinite" additive="replace"/>
+      </g>
+
+      <g transform="translate(813 178)">
+        <rect width="100" height="28" rx="14" fill="#39C5CF" fill-opacity="0.11" stroke="#39C5CF" stroke-opacity="0.42"/>
+        <text x="50.0" y="18" text-anchor="middle" class="pill" fill="#39C5CF">Web Tools</text>
+        <animateTransform attributeName="transform" type="translate" values="813 178;813 176;813 178" dur="5s" repeatCount="indefinite" additive="replace"/>
+      </g>
+      <rect x="410" y="258" width="180" height="34" rx="17" fill="#161B22" stroke="#3FB950" stroke-opacity="0.5"/>
+      <circle cx="430" cy="275" r="5" fill="#3FB950"><animate attributeName="opacity" values="0.35;1;0.35" dur="1.4s" repeatCount="indefinite"/></circle>
+      <text x="450" y="280" class="muted">built for dev productivity</text>
+    </g>
+
+    <text x="56" y="360" class="section">✦ WHAT IS BYTECLAW?</text>
+    <rect x="56" y="378" width="888" height="2" fill="#30363D"/>
+    <text x="64" y="410" class="desc"><tspan fill="#58A6FF" font-weight="800">ByteClaw</tspan> is a developer assistant that combines terminal workflows, AI planning, local project understanding, and Telegram control.</text>
+
+    <text x="56" y="446" class="section">✦ FEATURES</text>
+
+    
+    <g transform="translate(56 472)">
+      <rect width="286" height="156" rx="12" fill="#161B22" stroke="#30363D"/>
+      <rect x="0" y="0" width="286" height="3" rx="12" fill="#58A6FF">
+        <animate attributeName="opacity" values="0.45;1;0.45" dur="4.5s" begin="0.00s" repeatCount="indefinite"/>
+      </rect>
+      <text x="20" y="34" class="featureIcon" fill="#58A6FF">▣</text>
+      <text x="48" y="34" class="cardTitle">CLI Mode</text>
+      <circle cx="22" cy="68" r="2.8" fill="#58A6FF"/><text x="34" y="72" class="cardItem">Interactive terminal workflows</text><circle cx="22" cy="88" r="2.8" fill="#58A6FF"/><text x="34" y="92" class="cardItem">Understand local project context</text><circle cx="22" cy="108" r="2.8" fill="#58A6FF"/><text x="34" y="112" class="cardItem">Markdown output rendering</text><circle cx="22" cy="128" r="2.8" fill="#58A6FF"/><text x="34" y="132" class="cardItem">Stylish terminal interface</text>
+      <animateTransform attributeName="transform" type="translate" values="56 472;56 469;56 472" dur="6s" begin="0.00s" repeatCount="indefinite" additive="replace"/>
+    </g>
+
+    <g transform="translate(364 472)">
+      <rect width="286" height="156" rx="12" fill="#161B22" stroke="#30363D"/>
+      <rect x="0" y="0" width="286" height="3" rx="12" fill="#A371F7">
+        <animate attributeName="opacity" values="0.45;1;0.45" dur="4.5s" begin="0.25s" repeatCount="indefinite"/>
+      </rect>
+      <text x="20" y="34" class="featureIcon" fill="#A371F7">◈</text>
+      <text x="48" y="34" class="cardTitle">Telegram Bot</text>
+      <circle cx="22" cy="68" r="2.8" fill="#A371F7"/><text x="34" y="72" class="cardItem">Control assistant remotely</text><circle cx="22" cy="88" r="2.8" fill="#A371F7"/><text x="34" y="92" class="cardItem">Run slash commands</text><circle cx="22" cy="108" r="2.8" fill="#A371F7"/><text x="34" y="112" class="cardItem">Plan and explain project changes</text><circle cx="22" cy="128" r="2.8" fill="#A371F7"/><text x="34" y="132" class="cardItem">Useful for quick mobile access</text>
+      <animateTransform attributeName="transform" type="translate" values="364 472;364 469;364 472" dur="6s" begin="0.18s" repeatCount="indefinite" additive="replace"/>
+    </g>
+
+    <g transform="translate(672 472)">
+      <rect width="286" height="156" rx="12" fill="#161B22" stroke="#30363D"/>
+      <rect x="0" y="0" width="286" height="3" rx="12" fill="#3FB950">
+        <animate attributeName="opacity" values="0.45;1;0.45" dur="4.5s" begin="0.50s" repeatCount="indefinite"/>
+      </rect>
+      <text x="20" y="34" class="featureIcon" fill="#3FB950">◆</text>
+      <text x="48" y="34" class="cardTitle">Ask Mode</text>
+      <circle cx="22" cy="68" r="2.8" fill="#3FB950"/><text x="34" y="72" class="cardItem">Ask questions about your codeba…</text><circle cx="22" cy="88" r="2.8" fill="#3FB950"/><text x="34" y="92" class="cardItem">Get structured answers</text><circle cx="22" cy="108" r="2.8" fill="#3FB950"/><text x="34" y="112" class="cardItem">Summarize project files</text><circle cx="22" cy="128" r="2.8" fill="#3FB950"/><text x="34" y="132" class="cardItem">Save responses as Markdown</text>
+      <animateTransform attributeName="transform" type="translate" values="672 472;672 469;672 472" dur="6s" begin="0.36s" repeatCount="indefinite" additive="replace"/>
+    </g>
+
+    <g transform="translate(56 650)">
+      <rect width="286" height="156" rx="12" fill="#161B22" stroke="#30363D"/>
+      <rect x="0" y="0" width="286" height="3" rx="12" fill="#F85149">
+        <animate attributeName="opacity" values="0.45;1;0.45" dur="4.5s" begin="0.75s" repeatCount="indefinite"/>
+      </rect>
+      <text x="20" y="34" class="featureIcon" fill="#F85149">✦</text>
+      <text x="48" y="34" class="cardTitle">Agent Mode</text>
+      <circle cx="22" cy="68" r="2.8" fill="#F85149"/><text x="34" y="72" class="cardItem">Multi-step workflow planning</text><circle cx="22" cy="88" r="2.8" fill="#F85149"/><text x="34" y="92" class="cardItem">File modification flow</text><circle cx="22" cy="108" r="2.8" fill="#F85149"/><text x="34" y="112" class="cardItem">Run actions with review</text><circle cx="22" cy="128" r="2.8" fill="#F85149"/><text x="34" y="132" class="cardItem">Command execution support</text>
+      <animateTransform attributeName="transform" type="translate" values="56 650;56 647;56 650" dur="6s" begin="0.54s" repeatCount="indefinite" additive="replace"/>
+    </g>
+
+    <g transform="translate(364 650)">
+      <rect width="286" height="156" rx="12" fill="#161B22" stroke="#30363D"/>
+      <rect x="0" y="0" width="286" height="3" rx="12" fill="#D29922">
+        <animate attributeName="opacity" values="0.45;1;0.45" dur="4.5s" begin="1.00s" repeatCount="indefinite"/>
+      </rect>
+      <text x="20" y="34" class="featureIcon" fill="#D29922">◍</text>
+      <text x="48" y="34" class="cardTitle">Plan Mode</text>
+      <circle cx="22" cy="68" r="2.8" fill="#D29922"/><text x="34" y="72" class="cardItem">Generate step-by-step plans</text><circle cx="22" cy="88" r="2.8" fill="#D29922"/><text x="34" y="92" class="cardItem">Break down complex tasks</text><circle cx="22" cy="108" r="2.8" fill="#D29922"/><text x="34" y="112" class="cardItem">Compatibility checks</text><circle cx="22" cy="128" r="2.8" fill="#D29922"/><text x="34" y="132" class="cardItem">Safer execution flow</text>
+      <animateTransform attributeName="transform" type="translate" values="364 650;364 647;364 650" dur="6s" begin="0.72s" repeatCount="indefinite" additive="replace"/>
+    </g>
+
+    <g transform="translate(672 650)">
+      <rect width="286" height="156" rx="12" fill="#161B22" stroke="#30363D"/>
+      <rect x="0" y="0" width="286" height="3" rx="12" fill="#39C5CF">
+        <animate attributeName="opacity" values="0.45;1;0.45" dur="4.5s" begin="1.25s" repeatCount="indefinite"/>
+      </rect>
+      <text x="20" y="34" class="featureIcon" fill="#39C5CF">✹</text>
+      <text x="48" y="34" class="cardTitle">Web Tools</text>
+      <circle cx="22" cy="68" r="2.8" fill="#39C5CF"/><text x="34" y="72" class="cardItem">Research and docs lookup</text><circle cx="22" cy="88" r="2.8" fill="#39C5CF"/><text x="34" y="92" class="cardItem">URL fetching</text><circle cx="22" cy="108" r="2.8" fill="#39C5CF"/><text x="34" y="112" class="cardItem">Web crawling</text><circle cx="22" cy="128" r="2.8" fill="#39C5CF"/><text x="34" y="132" class="cardItem">Documentation support</text>
+      <animateTransform attributeName="transform" type="translate" values="672 650;672 647;672 650" dur="6s" begin="0.90s" repeatCount="indefinite" additive="replace"/>
+    </g>
+
+    <text x="56" y="830" class="section">✦ PROJECT STRUCTURE</text>
+    <rect x="56" y="850" width="432" height="164" rx="12" fill="#161B22" stroke="#30363D"/>
+    <text x="82" y="878" class="treeText">ByteClaw/</text><text x="82" y="898" class="treeText">├─ src/</text><text x="82" y="918" class="treeText">│  ├─ modes/</text><text x="82" y="938" class="treeText">│  │  ├─ cli.ts</text><text x="82" y="958" class="treeText">│  │  └─ telegram.ts</text><text x="82" y="978" class="treeText">│  ├─ agents/</text><text x="82" y="998" class="treeText">│  ├─ tools/</text><text x="82" y="1018" class="treeText">│  └─ index.ts</text><text x="82" y="1038" class="treeText">├─ scripts/</text><text x="82" y="1058" class="treeText">├─ package.json</text><text x="82" y="1078" class="treeText">└─ README.md</text>
+    <rect x="512" y="850" width="432" height="164" rx="12" fill="#161B22" stroke="#30363D"/>
+    <text x="540" y="886" class="cardTitle">Terminal-first experience</text>
+    <text x="540" y="916" class="cardItem">Designed for fast local workflows with clean prompts,</text>
+    <text x="540" y="938" class="cardItem">AI-powered planning, and remote Telegram control.</text>
+    <rect x="540" y="964" width="350" height="26" rx="6" fill="#0D1117" stroke="#30363D"/>
+    <text x="558" y="982" class="cmdText">$ byteclaw-build wakeup</text>
+
+    <text x="56" y="1108" class="section">✦ HOW IT WORKS</text>
+    
+      <g transform="translate(56 1132)">
+        <rect width="150" height="30" rx="7" fill="#0D1117" stroke="#58A6FF" stroke-opacity="0.5"/>
+        <text x="75.0" y="20" text-anchor="middle" class="monoSmall" fill="#58A6FF">Understand Repo</text>
+      </g>
+<path d="M216 1147 H246" stroke="#30363D" stroke-width="2" stroke-dasharray="5 5"><animate attributeName="stroke-dashoffset" values="0;-40" dur="2s" repeatCount="indefinite"/></path>
+
+      <g transform="translate(252 1132)">
+        <rect width="110" height="30" rx="7" fill="#0D1117" stroke="#A371F7" stroke-opacity="0.5"/>
+        <text x="55.0" y="20" text-anchor="middle" class="monoSmall" fill="#A371F7">Ask / Plan</text>
+      </g>
+<path d="M372 1147 H402" stroke="#30363D" stroke-width="2" stroke-dasharray="5 5"><animate attributeName="stroke-dashoffset" values="0;-40" dur="2s" repeatCount="indefinite"/></path>
+
+      <g transform="translate(408 1132)">
+        <rect width="118" height="30" rx="7" fill="#0D1117" stroke="#3FB950" stroke-opacity="0.5"/>
+        <text x="59.0" y="20" text-anchor="middle" class="monoSmall" fill="#3FB950">Run Actions</text>
+      </g>
+<path d="M536 1147 H566" stroke="#30363D" stroke-width="2" stroke-dasharray="5 5"><animate attributeName="stroke-dashoffset" values="0;-40" dur="2s" repeatCount="indefinite"/></path>
+
+      <g transform="translate(572 1132)">
+        <rect width="142" height="30" rx="7" fill="#0D1117" stroke="#D29922" stroke-opacity="0.5"/>
+        <text x="71.0" y="20" text-anchor="middle" class="monoSmall" fill="#D29922">CLI / Telegram</text>
+      </g>
+<path d="M724 1147 H754" stroke="#30363D" stroke-width="2" stroke-dasharray="5 5"><animate attributeName="stroke-dashoffset" values="0;-40" dur="2s" repeatCount="indefinite"/></path>
+
+      <g transform="translate(760 1132)">
+        <rect width="92" height="30" rx="7" fill="#0D1117" stroke="#F85149" stroke-opacity="0.5"/>
+        <text x="46.0" y="20" text-anchor="middle" class="monoSmall" fill="#F85149">Review</text>
+      </g>
+
+    <text x="56" y="1214" class="section">✦ TECH STACK</text>
+    
+      <g transform="translate(56 1238)">
+        <rect width="108" height="28" rx="14" fill="#58A6FF" fill-opacity="0.11" stroke="#58A6FF" stroke-opacity="0.42"/>
+        <text x="54.0" y="18" text-anchor="middle" class="pill" fill="#58A6FF">TypeScript</text>
+        <animateTransform attributeName="transform" type="translate" values="56 1238;56 1236;56 1238" dur="5s" repeatCount="indefinite" additive="replace"/>
+      </g>
+
+      <g transform="translate(174 1238)">
+        <rect width="108" height="28" rx="14" fill="#A371F7" fill-opacity="0.11" stroke="#A371F7" stroke-opacity="0.42"/>
+        <text x="54.0" y="18" text-anchor="middle" class="pill" fill="#A371F7">JavaScript</text>
+        <animateTransform attributeName="transform" type="translate" values="174 1238;174 1236;174 1238" dur="5s" repeatCount="indefinite" additive="replace"/>
+      </g>
+
+      <g transform="translate(292 1238)">
+        <rect width="84" height="28" rx="14" fill="#3FB950" fill-opacity="0.11" stroke="#3FB950" stroke-opacity="0.42"/>
+        <text x="42.0" y="18" text-anchor="middle" class="pill" fill="#3FB950">Node.js</text>
+        <animateTransform attributeName="transform" type="translate" values="292 1238;292 1236;292 1238" dur="5s" repeatCount="indefinite" additive="replace"/>
+      </g>
+
+      <g transform="translate(386 1238)">
+        <rect width="70" height="28" rx="14" fill="#D29922" fill-opacity="0.11" stroke="#D29922" stroke-opacity="0.42"/>
+        <text x="35.0" y="18" text-anchor="middle" class="pill" fill="#D29922">Bun</text>
+        <animateTransform attributeName="transform" type="translate" values="386 1238;386 1236;386 1238" dur="5s" repeatCount="indefinite" additive="replace"/>
+      </g>
+
+      <g transform="translate(466 1238)">
+        <rect width="124" height="28" rx="14" fill="#F85149" fill-opacity="0.11" stroke="#F85149" stroke-opacity="0.42"/>
+        <text x="62.0" y="18" text-anchor="middle" class="pill" fill="#F85149">Telegram Bot</text>
+        <animateTransform attributeName="transform" type="translate" values="466 1238;466 1236;466 1238" dur="5s" repeatCount="indefinite" additive="replace"/>
+      </g>
+
+      <g transform="translate(600 1238)">
+        <rect width="92" height="28" rx="14" fill="#39C5CF" fill-opacity="0.11" stroke="#39C5CF" stroke-opacity="0.42"/>
+        <text x="46.0" y="18" text-anchor="middle" class="pill" fill="#39C5CF">Markdown</text>
+        <animateTransform attributeName="transform" type="translate" values="600 1238;600 1236;600 1238" dur="5s" repeatCount="indefinite" additive="replace"/>
+      </g>
+
+      <g transform="translate(702 1238)">
+        <rect width="140" height="28" rx="14" fill="#58A6FF" fill-opacity="0.11" stroke="#58A6FF" stroke-opacity="0.42"/>
+        <text x="70.0" y="18" text-anchor="middle" class="pill" fill="#58A6FF">GitHub Actions</text>
+        <animateTransform attributeName="transform" type="translate" values="702 1238;702 1236;702 1238" dur="5s" repeatCount="indefinite" additive="replace"/>
+      </g>
+
+      <g transform="translate(852 1238)">
+        <rect width="70" height="28" rx="14" fill="#A371F7" fill-opacity="0.11" stroke="#A371F7" stroke-opacity="0.42"/>
+        <text x="35.0" y="18" text-anchor="middle" class="pill" fill="#A371F7">Cli</text>
+        <animateTransform attributeName="transform" type="translate" values="852 1238;852 1236;852 1238" dur="5s" repeatCount="indefinite" additive="replace"/>
+      </g>
+
+      <g transform="translate(56 1278)">
+        <rect width="70" height="28" rx="14" fill="#3FB950" fill-opacity="0.11" stroke="#3FB950" stroke-opacity="0.42"/>
+        <text x="35.0" y="18" text-anchor="middle" class="pill" fill="#3FB950">Json</text>
+        <animateTransform attributeName="transform" type="translate" values="56 1278;56 1276;56 1278" dur="5s" repeatCount="indefinite" additive="replace"/>
+      </g>
+
+      <g transform="translate(136 1278)">
+        <rect width="132" height="28" rx="14" fill="#D29922" fill-opacity="0.11" stroke="#D29922" stroke-opacity="0.42"/>
+        <text x="66.0" y="18" text-anchor="middle" class="pill" fill="#D29922">Openrouter Ai</text>
+        <animateTransform attributeName="transform" type="translate" values="136 1278;136 1276;136 1278" dur="5s" repeatCount="indefinite" additive="replace"/>
+      </g>
+
+      <g transform="translate(278 1278)">
+        <rect width="100" height="28" rx="14" fill="#F85149" fill-opacity="0.11" stroke="#F85149" stroke-opacity="0.42"/>
+        <text x="50.0" y="18" text-anchor="middle" class="pill" fill="#F85149">Web Tools</text>
+        <animateTransform attributeName="transform" type="translate" values="278 1278;278 1276;278 1278" dur="5s" repeatCount="indefinite" additive="replace"/>
+      </g>
+
+    <text x="56" y="1418" class="section">✦ GETTING STARTED</text>
+    
+    <g transform="translate(56 1442)">
+      <rect width="434" height="92" rx="11" fill="#161B22" stroke="#30363D"/>
+      <circle cx="22" cy="24" r="6" fill="#58A6FF"/>
+      <text x="40" y="29" class="cardTitle">Clone</text>
+      <text x="24" y="52" class="cmdText">git clone https://github.com/UjjwalKumarKannojiya/ByteClaw.git</text><text x="24" y="70" class="cmdText">cd ByteClaw</text>
+    </g>
+
+    <g transform="translate(510 1442)">
+      <rect width="434" height="92" rx="11" fill="#161B22" stroke="#30363D"/>
+      <circle cx="22" cy="24" r="6" fill="#A371F7"/>
+      <text x="40" y="29" class="cardTitle">Install</text>
+      <text x="24" y="52" class="cmdText">npm install</text><text x="24" y="70" class="cmdText"># or</text><text x="24" y="88" class="cmdText">bun install</text>
+    </g>
+
+    <g transform="translate(56 1554)">
+      <rect width="434" height="92" rx="11" fill="#161B22" stroke="#30363D"/>
+      <circle cx="22" cy="24" r="6" fill="#3FB950"/>
+      <text x="40" y="29" class="cardTitle">Run</text>
+      <text x="24" y="52" class="cmdText">npm run dev</text><text x="24" y="70" class="cmdText"># or</text><text x="24" y="88" class="cmdText">bun run dev</text>
+    </g>
+
+    <g transform="translate(510 1554)">
+      <rect width="434" height="92" rx="11" fill="#161B22" stroke="#30363D"/>
+      <circle cx="22" cy="24" r="6" fill="#D29922"/>
+      <text x="40" y="29" class="cardTitle">CLI</text>
+      <text x="24" y="52" class="cmdText">byteclaw-build wakeup</text>
+    </g>
+
+    <text x="56" y="1688" class="section">✦ ENVIRONMENT VARIABLES</text>
+    
+    <g transform="translate(56 1712)">
+      <rect width="286" height="54" rx="9" fill="#161B22" stroke="#30363D"/>
+      <text x="18" y="23" class="envKey">OPENROUTER_API_KEY</text>
+      <text x="18" y="40" class="envHint">paste your key here</text>
+    </g>
+
+    <g transform="translate(364 1712)">
+      <rect width="286" height="54" rx="9" fill="#161B22" stroke="#30363D"/>
+      <text x="18" y="23" class="envKey">TELEGRAM_BOT_TOKEN</text>
+      <text x="18" y="40" class="envHint">paste your key here</text>
+    </g>
+
+    <g transform="translate(672 1712)">
+      <rect width="286" height="54" rx="9" fill="#161B22" stroke="#30363D"/>
+      <text x="18" y="23" class="envKey">FIRECRAWL_API_KEY</text>
+      <text x="18" y="40" class="envHint">paste your key here</text>
+    </g>
+
+    <g transform="translate(56 1784)">
+      <rect width="286" height="54" rx="9" fill="#161B22" stroke="#30363D"/>
+      <text x="18" y="23" class="envKey">TAVILY_API_KEY</text>
+      <text x="18" y="40" class="envHint">paste your key here</text>
+    </g>
+
+    <line x1="56" y1="1824" x2="944" y2="1824" stroke="#30363D"/>
+    <text x="500" y="1844" text-anchor="middle" class="muted">Built with ✦ by Ujjwal Kumar Kannojiya</text>
+  </g>
+</svg>

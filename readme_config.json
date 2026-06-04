@@ -1,0 +1,116 @@
+{
+  "project": {
+    "name": "ByteClaw",
+    "tagline": "AI-powered terminal and Telegram assistant",
+    "headline": "for understanding, planning, and modifying codebases.",
+    "description": "Run CLI workflows, ask questions about your project, generate implementation plans, and control coding tasks through Telegram.",
+    "status": "built for dev productivity",
+    "repo_url": "https://github.com/UjjwalKumarKannojiya/ByteClaw",
+    "author": "Ujjwal Kumar Kannojiya"
+  },
+  "badges": [
+    "TypeScript",
+    "Node.js",
+    "CLI",
+    "Telegram Bot",
+    "OpenRouter AI",
+    "Web Tools"
+  ],
+  "features": [
+    {
+      "title": "CLI Mode",
+      "icon": "\u25a3",
+      "items": [
+        "Interactive terminal workflows",
+        "Understand local project context",
+        "Markdown output rendering",
+        "Stylish terminal interface"
+      ]
+    },
+    {
+      "title": "Telegram Bot",
+      "icon": "\u25c8",
+      "items": [
+        "Control assistant remotely",
+        "Run slash commands",
+        "Plan and explain project changes",
+        "Useful for quick mobile access"
+      ]
+    },
+    {
+      "title": "Ask Mode",
+      "icon": "\u25c6",
+      "items": [
+        "Ask questions about your codebase",
+        "Get structured answers",
+        "Summarize project files",
+        "Save responses as Markdown"
+      ]
+    },
+    {
+      "title": "Agent Mode",
+      "icon": "\u2726",
+      "items": [
+        "Multi-step workflow planning",
+        "File modification flow",
+        "Run actions with review",
+        "Command execution support"
+      ]
+    },
+    {
+      "title": "Plan Mode",
+      "icon": "\u25cd",
+      "items": [
+        "Generate step-by-step plans",
+        "Break down complex tasks",
+        "Compatibility checks",
+        "Safer execution flow"
+      ]
+    },
+    {
+      "title": "Web Tools",
+      "icon": "\u2739",
+      "items": [
+        "Research and docs lookup",
+        "URL fetching",
+        "Web crawling",
+        "Documentation support"
+      ]
+    }
+  ],
+  "commands": [
+    {
+      "title": "Clone",
+      "cmd": "git clone https://github.com/UjjwalKumarKannojiya/ByteClaw.git\ncd ByteClaw"
+    },
+    {
+      "title": "Install",
+      "cmd": "npm install\n# or\nbun install"
+    },
+    {
+      "title": "Run",
+      "cmd": "npm run dev\n# or\nbun run dev"
+    },
+    {
+      "title": "CLI",
+      "cmd": "byteclaw-build wakeup"
+    }
+  ],
+  "env": [
+    "OPENROUTER_API_KEY",
+    "TELEGRAM_BOT_TOKEN",
+    "FIRECRAWL_API_KEY",
+    "TAVILY_API_KEY"
+  ],
+  "fallback_tech": [
+    "TypeScript",
+    "JavaScript",
+    "Node.js",
+    "Bun",
+    "Telegram Bot",
+    "OpenRouter AI",
+    "CLI",
+    "Markdown",
+    "GitHub Actions"
+  ]
+}
